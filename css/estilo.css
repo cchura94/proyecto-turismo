@@ -211,6 +211,7 @@ img {
     margin-top: 0;
     padding-top: 80px;
     background-image: url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=1600');
+    background-image: url('/img/IMG_20260804_181615805_HDR.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
