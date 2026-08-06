@@ -198,6 +198,23 @@
             </a>
 
             <!-- Perú -->
+            <a href="cusco-machu-picchu-peru.html" data-country="peru" class="destination-card group relative rounded-2xl overflow-hidden backdrop-blur-xl bg-white/5 border border-white/10 hover:border-teal-500/50 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-teal-500/10 flex flex-col">
+                <div class="h-48 overflow-hidden relative">
+                    <img src="https://images.unsplash.com/photo-1526392060635-9d6019884377?auto=format&fit=crop&q=80" alt="Machu Picchu" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <span class="absolute top-3 left-3 px-2.5 py-1 rounded-md text-xs font-medium bg-slate-950/70 backdrop-blur-md text-emerald-300 border border-white/10">Perú</span>
+                </div>
+                <div class="p-5 flex-1 flex flex-col justify-between">
+                    <div>
+                        <h3 class="font-bold text-lg text-white group-hover:text-teal-300 transition-colors">Machu Picchu</h3>
+                        <p class="text-xs text-slate-400 mt-1">Cusco</p>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-white/10 flex items-center justify-between text-xs text-teal-400 font-medium">
+                        <span>Ver más información</span>
+                        <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+                    </div>
+                </div>
+            </a>
+
             <a href="cajamarca-bañosInca-Peru.html" data-country="peru" class="destination-card group relative rounded-2xl overflow-hidden backdrop-blur-xl bg-white/5 border border-white/10 hover:border-teal-500/50 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-teal-500/10 flex flex-col">
                 <div class="h-48 overflow-hidden relative">
                     <img src="https://images.unsplash.com/photo-1526392060635-9d6019884377?auto=format&fit=crop&q=80" alt="Baños del Inca" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
@@ -387,92 +404,11 @@
                 </div>
             </a>
 
-            <a href="Managua-Nicaragua.html" data-country="otros" class="destination-card group relative rounded-2xl overflow-hidden backdrop-blur-xl bg-white/5 border border-white/10 hover:border-teal-500/50 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-teal-500/10 flex flex-col">
-                <div class="h-48 overflow-hidden relative">
-                    <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&q=80" alt="Managua" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                    <span class="absolute top-3 left-3 px-2.5 py-1 rounded-md text-xs font-medium bg-slate-950/70 backdrop-blur-md text-sky-300 border border-white/10">Nicaragua</span>
-                </div>
-                <div class="p-5 flex-1 flex flex-col justify-between">
-                    <div>
-                        <h3 class="font-bold text-lg text-white group-hover:text-teal-300 transition-colors">Managua</h3>
-                        <p class="text-xs text-slate-400 mt-1">Distrito Capital</p>
-                    </div>
-                    <div class="mt-4 pt-3 border-t border-white/10 flex items-center justify-between text-xs text-teal-400 font-medium">
-                        <span>Ver más información</span>
-                        <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
-                    </div>
-                </div>
-            </a>
-
-            <a href="Puebla-Cholula-México.html" data-country="otros" class="destination-card group relative rounded-2xl overflow-hidden backdrop-blur-xl bg-white/5 border border-white/10 hover:border-teal-500/50 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-teal-500/10 flex flex-col">
-                <div class="h-48 overflow-hidden relative">
-                    <img src="https://images.unsplash.com/photo-1512813195386-6cf811ad3542?auto=format&fit=crop&q=80" alt="Cholula" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                    <span class="absolute top-3 left-3 px-2.5 py-1 rounded-md text-xs font-medium bg-slate-950/70 backdrop-blur-md text-sky-300 border border-white/10">México</span>
-                </div>
-                <div class="p-5 flex-1 flex flex-col justify-between">
-                    <div>
-                        <h3 class="font-bold text-lg text-white group-hover:text-teal-300 transition-colors">Gran Pirámide de Cholula</h3>
-                        <p class="text-xs text-slate-400 mt-1">Puebla</p>
-                    </div>
-                    <div class="mt-4 pt-3 border-t border-white/10 flex items-center justify-between text-xs text-teal-400 font-medium">
-                        <span>Ver más información</span>
-                        <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
-                    </div>
-                </div>
-            </a>
-
         </div>
     </main>
 
-    <!-- Footer -->
-    <footer class="mt-20 border-t border-white/10 bg-slate-950/80 backdrop-blur-md py-8">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-            <p class="text-xs text-slate-400">© 2026 Proyecto Turismo LATAM. Todos los derechos reservados.</p>
-            <div class="flex items-center gap-4 text-xs text-slate-400">
-                <span>Diseñado con Tailwind CSS</span>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Interactive Scripts -->
     <script>
         lucide.createIcons();
-
-        // Search Filter Logic
-        const searchInput = document.getElementById('searchInput');
-        const cards = document.querySelectorAll('.destination-card');
-
-        searchInput.addEventListener('input', (e) => {
-            const query = e.target.value.toLowerCase().trim();
-            cards.forEach(card => {
-                const text = card.textContent.toLowerCase();
-                if (text.includes(query)) {
-                    card.classList.remove('hidden');
-                } else {
-                    card.classList.add('hidden');
-                }
-            });
-        });
-
-        // Country Category Filter Logic
-        function filterCountry(category) {
-            // Toggle active state on buttons
-            document.querySelectorAll('.filter-btn').forEach(btn => {
-                btn.classList.remove('bg-teal-500', 'text-slate-950', 'font-semibold');
-                btn.classList.add('bg-white/5', 'text-slate-300');
-            });
-            event.target.classList.remove('bg-white/5', 'text-slate-300');
-            event.target.classList.add('bg-teal-500', 'text-slate-950', 'font-semibold');
-
-            // Filter cards
-            cards.forEach(card => {
-                if (category === 'all' || card.dataset.country === category) {
-                    card.classList.remove('hidden');
-                } else {
-                    card.classList.add('hidden');
-                }
-            });
-        }
     </script>
 </body>
 </html>
