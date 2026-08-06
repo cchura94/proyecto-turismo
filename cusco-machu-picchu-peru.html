@@ -1,202 +1,775 @@
 <!DOCTYPE html>
 <html lang="es" class="scroll-smooth">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Descubre Machu Picchu - La Maravilla del Mundo</title>
-    <!-- Tailwind CSS desde CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
-    <style>
-        body { font-family: 'Plus Jakarta Sans', sans-serif; }
-    </style>
-</head>
-<body class="bg-slate-50 text-slate-800 antialiased">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Machu Picchu — La ciudad vieja entre las nubes | Perú</title>
+<meta name="description" content="Descubre el Santuario Histórico de Machu Picchu: rutas, experiencias, datos prácticos y reserva de entradas.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⛰️</text></svg>">
 
-    <!-- Navbar -->
-    <nav class="fixed top-0 left-0 right-0 z-50 bg-slate-900/80 backdrop-blur-md border-b border-white/10 text-white">
-        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-            <a href="#" class="text-2xl font-extrabold tracking-tight">PERÚ<span class="text-emerald-400">.</span></a>
-            <div class="hidden md:flex items-center gap-8 font-medium text-sm">
-                <a href="#experiencias" class="hover:text-emerald-400 transition-colors">Experiencias</a>
-                <a href="#detalles" class="hover:text-emerald-400 transition-colors">Información</a>
-                <a href="#reserva" class="bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold px-5 py-2.5 rounded-full transition-all duration-300 transform hover:scale-105">
-                    Reservar Viaje
-                </a>
-            </div>
-        </div>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,300;1,9..144,400;1,9..144,500;1,9..144,600&family=Karla:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        ink:   '#131C16',
+        moss:  { 900:'#101A14', 800:'#16241C', 700:'#1C2E24', 600:'#24382D' },
+        parch: '#F4EFE3',
+        cream: '#FBF8F1',
+        stone: { 200:'#E4DCC8', 300:'#D2C6AB', 400:'#B3A483', 500:'#8F8060' },
+        gold:  { 300:'#E7C881', 400:'#D8AC54', 500:'#C9973B', 600:'#A87A26' },
+        terra: '#B45139',
+      },
+      fontFamily: {
+        display: ['Fraunces','serif'],
+        body: ['Karla','ui-sans-serif','sans-serif'],
+      },
+    }
+  }
+}
+</script>
+
+<style>
+  /* ---------- Animaciones firma ---------- */
+  @keyframes kenburns { 0%{transform:scale(1) translateY(0)} 100%{transform:scale(1.1) translateY(-2%)} }
+  .kenburns { animation: kenburns 20s ease-in-out infinite alternate; }
+
+  @keyframes drift { 0%{transform:translateX(-12%)} 100%{transform:translateX(12%)} }
+  .mist   { animation: drift 22s ease-in-out infinite alternate; }
+  .mist-2 { animation-duration: 31s; animation-direction: alternate-reverse; }
+
+  @keyframes marquee { to { transform: translateX(-50%); } }
+  .marquee-track { animation: marquee 30s linear infinite; }
+
+  @keyframes spinSlow { to { transform: rotate(360deg); } }
+  .spin-slow { animation: spinSlow 24s linear infinite; }
+
+  @keyframes bounceDown { 0%,100%{transform:translateY(0)} 50%{transform:translateY(9px)} }
+  .bounce-down { animation: bounceDown 1.8s ease-in-out infinite; }
+
+  @keyframes riseUp { to { transform: translateY(0); } }
+  .mask-line { display:block; overflow:hidden; }
+  .mask-line > span { display:block; transform:translateY(112%); animation: riseUp 1.1s cubic-bezier(.22,.61,.36,1) forwards; animation-delay: var(--d,0s); }
+
+  @keyframes panelIn { from{opacity:0; transform:translateY(18px)} to{opacity:1; transform:none} }
+  .panel-in { animation: panelIn .55s cubic-bezier(.22,.61,.36,1) both; }
+
+  @keyframes pop { 0%{transform:scale(1)} 40%{transform:scale(1.07)} 100%{transform:scale(1)} }
+  .pop { animation: pop .35s ease; }
+
+  @keyframes shake { 0%,100%{transform:translateX(0)} 25%{transform:translateX(-6px)} 75%{transform:translateX(6px)} }
+  .shake { animation: shake .3s ease 2; }
+
+  /* ---------- Reveals al hacer scroll ---------- */
+  .reveal { opacity:0; transform:translateY(30px);
+    transition: opacity .9s cubic-bezier(.22,.61,.36,1), transform .9s cubic-bezier(.22,.61,.36,1);
+    transition-delay: var(--d,0s); }
+  .reveal-left { opacity:0; transform:translateX(-36px);
+    transition: opacity .9s cubic-bezier(.22,.61,.36,1), transform .9s cubic-bezier(.22,.61,.36,1);
+    transition-delay: var(--d,0s); }
+  .reveal.is-in, .reveal-left.is-in { opacity:1; transform:none; }
+
+  /* ---------- Postales ---------- */
+  .postcard { transition: transform .5s cubic-bezier(.22,.61,.36,1), box-shadow .5s ease; }
+  .postcard:hover { transform: rotate(0deg) translateY(-12px) scale(1.04) !important; z-index:20;
+    box-shadow: 0 30px 55px -18px rgba(19,28,22,.45); }
+
+  /* ---------- Textura de grano ---------- */
+  .grain { background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/></filter><rect width='180' height='180' filter='url(%23n)' opacity='0.55'/></svg>"); }
+
+  .outline-text { -webkit-text-stroke: 1px rgba(201,151,59,.45); color: transparent; }
+
+  ::selection { background:#C9973B; color:#131C16; }
+  ::-webkit-scrollbar { width:10px } ::-webkit-scrollbar-track{background:#101A14}
+  ::-webkit-scrollbar-thumb{background:#C9973B; border-radius:0}
+
+  /* ---------- Movimiento reducido ---------- */
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior:auto; }
+    *, *::before, *::after { animation-duration:.01ms !important; animation-iteration-count:1 !important; transition-duration:.01ms !important; }
+    .mask-line > span { transform:none; animation:none; }
+    .reveal, .reveal-left { opacity:1; transform:none; }
+    .mist, .kenburns, .marquee-track, .spin-slow { animation:none; }
+  }
+</style>
+</head>
+
+<body class="bg-parch text-ink font-body antialiased">
+
+<!-- Barra de progreso de lectura -->
+<div id="progress" class="fixed top-0 left-0 z-[60] h-[3px] w-0 bg-gold-500"></div>
+
+<!-- Grano sutil -->
+<div class="grain pointer-events-none fixed inset-0 z-[45] opacity-[0.05]"></div>
+
+<!-- ================= NAV ================= -->
+<header id="nav" class="fixed inset-x-0 top-0 z-50 transition-all duration-500">
+  <div class="mx-auto flex h-20 max-w-7xl items-center justify-between px-6 lg:px-10">
+    <a href="#inicio" class="flex items-center gap-3 text-cream">
+      <svg class="h-7 w-7 text-gold-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+        <circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M19.1 4.9L17 7M7 17l-2.1 2.1"/>
+      </svg>
+      <span class="leading-none">
+        <span class="block font-display text-lg tracking-wide">MACHU PICCHU</span>
+        <span class="block text-[10px] uppercase tracking-[0.35em] text-stone-400">Santuario Histórico</span>
+      </span>
+    </a>
+
+    <nav class="hidden items-center gap-8 lg:flex">
+      <a href="#santuario"    class="nav-link relative text-[11px] uppercase tracking-[0.22em] text-stone-200 after:absolute after:-bottom-1.5 after:left-0 after:h-px after:w-0 after:bg-gold-400 after:transition-all after:duration-300 hover:text-gold-300 hover:after:w-full">Santuario</a>
+      <a href="#experiencias" class="nav-link relative text-[11px] uppercase tracking-[0.22em] text-stone-200 after:absolute after:-bottom-1.5 after:left-0 after:h-px after:w-0 after:bg-gold-400 after:transition-all after:duration-300 hover:text-gold-300 hover:after:w-full">Experiencias</a>
+      <a href="#rutas"        class="nav-link relative text-[11px] uppercase tracking-[0.22em] text-stone-200 after:absolute after:-bottom-1.5 after:left-0 after:h-px after:w-0 after:bg-gold-400 after:transition-all after:duration-300 hover:text-gold-300 hover:after:w-full">Rutas</a>
+      <a href="#galeria"      class="nav-link relative text-[11px] uppercase tracking-[0.22em] text-stone-200 after:absolute after:-bottom-1.5 after:left-0 after:h-px after:w-0 after:bg-gold-400 after:transition-all after:duration-300 hover:text-gold-300 hover:after:w-full">Galería</a>
+      <a href="#visita"       class="nav-link relative text-[11px] uppercase tracking-[0.22em] text-stone-200 after:absolute after:-bottom-1.5 after:left-0 after:h-px after:w-0 after:bg-gold-400 after:transition-all after:duration-300 hover:text-gold-300 hover:after:w-full">Visita</a>
+      <a href="#reserva" class="border border-gold-500 px-5 py-2.5 text-[11px] uppercase tracking-[0.22em] text-gold-300 transition-colors hover:bg-gold-500 hover:text-ink">Reservar</a>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="relative h-screen flex items-center justify-center overflow-hidden">
-        <!-- Imagen de Fondo -->
-        <div class="absolute inset-0 z-0">
-            <img src="https://images.unsplash.com/photo-1526392060635-9d6019884377?q=80&w=2070&auto=format&fit=crop" 
-                 alt="Machu Picchu" 
-                 class="w-full h-full object-cover object-center scale-105 animate-pulse-subtle">
-            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-slate-950/20"></div>
+    <button id="menuBtn" class="lg:hidden" aria-label="Abrir menú">
+      <span class="mb-1.5 block h-px w-7 bg-cream"></span>
+      <span class="block h-px w-5 bg-gold-400"></span>
+    </button>
+  </div>
+</header>
+
+<!-- Menú móvil -->
+<div id="mobileMenu" class="fixed inset-0 z-[55] hidden flex-col items-center justify-center gap-8 bg-moss-900/98">
+  <button id="menuClose" class="absolute right-6 top-6 text-cream text-3xl" aria-label="Cerrar menú">&times;</button>
+  <a href="#santuario"    class="mob-link font-display text-4xl text-cream hover:text-gold-300">Santuario</a>
+  <a href="#experiencias" class="mob-link font-display text-4xl text-cream hover:text-gold-300">Experiencias</a>
+  <a href="#rutas"        class="mob-link font-display text-4xl text-cream hover:text-gold-300">Rutas</a>
+  <a href="#galeria"      class="mob-link font-display text-4xl text-cream hover:text-gold-300">Galería</a>
+  <a href="#visita"       class="mob-link font-display text-4xl text-cream hover:text-gold-300">Visita</a>
+  <a href="#reserva"      class="mob-link mt-4 border border-gold-500 px-8 py-3 text-sm uppercase tracking-[0.25em] text-gold-300">Reservar entrada</a>
+</div>
+
+<!-- ================= HERO ================= -->
+<section id="inicio" class="relative h-screen min-h-[680px] overflow-hidden">
+  <img src="https://picsum.photos/seed/machu-picchu-andes/1920/1200" alt="Ciudadela de Machu Picchu entre montañas" class="kenburns absolute inset-0 h-full w-full object-cover">
+  <div class="absolute inset-0 bg-gradient-to-b from-ink/70 via-ink/25 to-ink/85"></div>
+  <div class="absolute inset-0 bg-gradient-to-r from-ink/70 via-transparent to-transparent"></div>
+
+  <!-- Niebla -->
+  <div class="mist absolute bottom-24 left-[-20%] h-32 w-[80%] rounded-full bg-white/10 blur-3xl"></div>
+  <div class="mist mist-2 absolute bottom-44 left-[30%] h-24 w-[90%] rounded-full bg-white/10 blur-3xl"></div>
+
+  <!-- Coordenadas verticales -->
+  <div class="absolute right-8 top-1/2 z-10 hidden -translate-y-1/2 lg:block">
+    <p class="rotate-90 whitespace-nowrap text-[10px] uppercase tracking-[0.5em] text-stone-300/80">13°09′S · 72°32′O — Valle del Urubamba</p>
+  </div>
+
+  <!-- Sello giratorio -->
+  <div class="absolute bottom-48 right-[6%] z-10 hidden h-36 w-36 xl:block">
+    <svg class="spin-slow h-full w-full" viewBox="0 0 100 100">
+      <defs><path id="circ" d="M50,50 m-38,0 a38,38 0 1,1 76,0 a38,38 0 1,1 -76,0"/></defs>
+      <text class="fill-gold-300" style="font-size:8.2px;letter-spacing:2.5px;font-family:Karla,sans-serif">
+        <textPath href="#circ">MACHU PICCHU · PERÚ · QHAPAQ ÑAN · APU · </textPath>
+      </text>
+    </svg>
+    <div class="absolute inset-0 grid place-items-center">
+      <svg class="h-7 w-7 text-gold-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+        <circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M19.1 4.9L17 7M7 17l-2.1 2.1"/>
+      </svg>
+    </div>
+  </div>
+
+  <!-- Contenido -->
+  <div class="relative z-10 mx-auto flex h-full max-w-7xl flex-col justify-end px-6 pb-44 lg:px-10">
+    <p data-scramble class="mb-6 text-[11px] font-bold uppercase tracking-[0.4em] text-gold-300">Santuario Histórico · Cusco · Perú</p>
+    <h1 class="font-display font-medium leading-[0.88] text-cream">
+      <span class="mask-line" style="--d:.15s"><span class="text-[clamp(4rem,13vw,11rem)]">Machu</span></span>
+      <span class="mask-line" style="--d:.35s"><span class="text-[clamp(4rem,13vw,11rem)]">Picchu<span class="text-gold-400">.</span></span></span>
+    </h1>
+    <p class="mask-line mt-6" style="--d:.6s"><span class="font-display text-xl italic text-stone-200 md:text-2xl">«la montaña vieja», en quechua — la ciudad que los incas construyeron entre las nubes</span></p>
+
+    <div class="mt-10 flex flex-wrap items-center gap-5">
+      <a href="#reserva" class="group inline-flex items-center gap-3 bg-gold-500 px-8 py-4 text-xs font-bold uppercase tracking-[0.25em] text-ink transition-colors hover:bg-gold-300">
+        Reservar entrada
+        <svg class="h-4 w-4 transition-transform group-hover:translate-x-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+      <a href="#rutas" class="inline-flex items-center gap-3 border border-cream/40 px-8 py-4 text-xs font-bold uppercase tracking-[0.25em] text-cream transition-colors hover:border-gold-400 hover:text-gold-300">Explorar rutas</a>
+    </div>
+
+    <div class="mt-14 hidden items-center gap-3 text-[10px] uppercase tracking-[0.35em] text-stone-300 md:flex">
+      <span class="bounce-down block h-10 w-px bg-gradient-to-b from-gold-400 to-transparent"></span> Desliza
+    </div>
+  </div>
+
+  <!-- Barra de datos -->
+  <div class="absolute inset-x-0 bottom-0 z-10 border-t border-white/15 bg-ink/50 backdrop-blur-sm">
+    <div class="mx-auto grid max-w-7xl grid-cols-2 divide-x divide-white/10 md:grid-cols-4">
+      <div class="px-6 py-5"><p class="text-[10px] uppercase tracking-[0.28em] text-stone-400">Altitud</p><p class="font-display text-2xl text-cream md:text-3xl"><span data-count="2430">2430</span> <span class="text-sm text-gold-300">m s. n. m.</span></p></div>
+      <div class="px-6 py-5"><p class="text-[10px] uppercase tracking-[0.28em] text-stone-400">Superficie</p><p class="font-display text-2xl text-cream md:text-3xl"><span data-count="32592">32592</span> <span class="text-sm text-gold-300">ha</span></p></div>
+      <div class="px-6 py-5"><p class="text-[10px] uppercase tracking-[0.28em] text-stone-400">Fundación</p><p class="font-display text-2xl text-cream md:text-3xl">c. <span data-count="1450">1450</span> <span class="text-sm text-gold-300">d. C.</span></p></div>
+      <div class="px-6 py-5"><p class="text-[10px] uppercase tracking-[0.28em] text-stone-400">Redescubierta</p><p class="font-display text-2xl text-cream md:text-3xl"><span data-count="1911">1911</span></p></div>
+    </div>
+  </div>
+</section>
+
+<!-- Cinta quechua -->
+<div class="overflow-hidden border-y border-gold-500/25 bg-moss-800 py-3">
+  <div class="marquee-track flex w-max whitespace-nowrap font-display text-lg italic tracking-wide text-gold-400/80">
+    <span class="px-6">PACHAMAMA ✦ TAWANTINSUYU ✦ INTI ✦ APU ✦ QUECHUA ✦ CÓNDOR ✦ PUMA ✦ SERPIENTE ✦ QHAPAQ ÑAN ✦&nbsp;</span>
+    <span class="px-6" aria-hidden="true">PACHAMAMA ✦ TAWANTINSUYU ✦ INTI ✦ APU ✦ QUECHUA ✦ CÓNDOR ✦ PUMA ✦ SERPIENTE ✦ QHAPAQ ÑAN ✦&nbsp;</span>
+  </div>
+</div>
+
+<!-- ================= 01 SANTUARIO (sticky) ================= -->
+<section id="santuario" class="scroll-mt-24 py-28">
+  <div class="mx-auto grid max-w-7xl gap-14 px-6 lg:grid-cols-12 lg:px-10">
+    <div class="lg:col-span-5">
+      <div class="lg:sticky lg:top-28">
+        <p class="reveal-left mb-4 flex items-center gap-3 text-xs font-bold uppercase tracking-[0.3em] text-gold-600"><span class="inline-block h-px w-10 bg-gold-500"></span>01 · El santuario</p>
+        <h2 class="reveal-left font-display text-4xl font-medium leading-tight md:text-5xl" style="--d:.1s">Una ciudad que respira <em class="text-terra">piedra y niebla</em></h2>
+        <p class="mt-8 leading-relaxed text-ink/75">Construida hacia 1450 por orden del inca Pachacútec, la llaqta de Machu Picchu fue santuario ceremonial, observatorio astronómico y residencia de élite. Sus muros de granito —unidos sin argamasa con una precisión que desafía la navaja— se alzan sobre una cresta entre los apus Machu Picchu y Huayna Picchu, a 2,430 metros sobre el cañón del Urubamba.</p>
+        <p class="mt-5 leading-relaxed text-ink/75">Abandonada durante la conquista y abrazada por la selva nublada durante cuatro siglos, fue presentada al mundo en 1911. Hoy, protegida como Santuario Histórico, Patrimonio Mundial y Maravilla del Mundo Moderno, sigue siendo uno de los testimonios más extraordinarios de la arquitectura humana.</p>
+        <dl class="mt-10 grid grid-cols-2 border-t border-ink/15">
+          <div class="border-b border-ink/15 py-4"><dt class="text-[10px] uppercase tracking-[0.25em] text-stone-500">Estructuras</dt><dd class="font-display text-2xl">+600</dd></div>
+          <div class="border-b border-ink/15 py-4 pl-4"><dt class="text-[10px] uppercase tracking-[0.25em] text-stone-500">Patrimonio UNESCO</dt><dd class="font-display text-2xl">1983</dd></div>
+          <div class="py-4"><dt class="text-[10px] uppercase tracking-[0.25em] text-stone-500">Maravilla del mundo</dt><dd class="font-display text-2xl">2007</dd></div>
+          <div class="py-4 pl-4"><dt class="text-[10px] uppercase tracking-[0.25em] text-stone-500">Especies de aves</dt><dd class="font-display text-2xl">+420</dd></div>
+        </dl>
+      </div>
+    </div>
+
+    <div class="space-y-16 lg:col-span-7">
+      <figure class="reveal">
+        <div class="overflow-hidden"><img src="https://picsum.photos/seed/inca-terraces/900/640" alt="Andenes de Machu Picchu" loading="lazy" class="w-full object-cover transition-transform duration-700 hover:scale-105"></div>
+        <figcaption class="mt-4 flex gap-4 border-b border-ink/15 pb-6"><span class="font-display text-3xl text-gold-600">01</span><span class="text-sm leading-relaxed text-ink/70"><strong class="block font-display text-lg text-ink">Los andenes</strong>Más de cien terrazas agrícolas escalan la montaña: sostuvieron la ciudad, drenaron las lluvias torrenciales y todavía detienen la erosión cinco siglos después.</span></figcaption>
+      </figure>
+
+      <figure class="reveal" style="--d:.1s">
+        <div class="overflow-hidden"><img src="https://picsum.photos/seed/inca-stonework/900/640" alt="Muro inca de piedra tallada" loading="lazy" class="w-full object-cover transition-transform duration-700 hover:scale-105"></div>
+        <figcaption class="mt-4 flex gap-4 border-b border-ink/15 pb-6"><span class="font-display text-3xl text-gold-600">02</span><span class="text-sm leading-relaxed text-ink/70"><strong class="block font-display text-lg text-ink">Piedra sobre piedra</strong>Bloques de hasta veinte toneladas ensamblados sin argamasa, sin rueda y sin hierro: ni una hoja de papel entra entre sus juntas.</span></figcaption>
+      </figure>
+
+      <blockquote class="reveal border-l-2 border-gold-500 pl-8" style="--d:.15s">
+        <p class="font-display text-2xl italic leading-snug text-ink md:text-3xl">«Parecía un sueño… la vista más hermosa que hayan visto ojos humanos.»</p>
+        <cite class="mt-4 block text-xs uppercase tracking-[0.3em] text-stone-500 not-italic">Diario de expedición · 1911</cite>
+      </blockquote>
+
+      <figure class="reveal" style="--d:.1s">
+        <div class="overflow-hidden"><img src="https://picsum.photos/seed/urubamba-mist/900/1000" alt="Niebla subiendo por el cañón del Urubamba" loading="lazy" class="w-full object-cover transition-transform duration-700 hover:scale-105"></div>
+        <figcaption class="mt-4 flex gap-4"><span class="font-display text-3xl text-gold-600">03</span><span class="text-sm leading-relaxed text-ink/70"><strong class="block font-display text-lg text-ink">La selva nublada</strong>Cada amanecer, la niebla del Urubamba sube por el cañón y viste la ciudadela durante horas — el fenómeno que le dio su aura de misterio.</span></figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 02 EXPERIENCIAS ================= -->
+<section id="experiencias" class="scroll-mt-24 bg-cream py-28">
+  <div class="mx-auto max-w-7xl px-6 lg:px-10">
+    <div class="mb-16 grid gap-8 lg:grid-cols-12 lg:items-end">
+      <div class="lg:col-span-7">
+        <p class="reveal-left mb-4 flex items-center gap-3 text-xs font-bold uppercase tracking-[0.3em] text-gold-600"><span class="inline-block h-px w-10 bg-gold-500"></span>02 · Experiencias</p>
+        <h2 class="reveal-left font-display text-4xl font-medium leading-tight md:text-5xl" style="--d:.1s">Seis maneras de <em class="text-terra">sentir</em> la ciudadela</h2>
+      </div>
+      <p class="reveal text-ink/70 lg:col-span-5 lg:pb-2" style="--d:.15s">Cada boleto abre rutas distintas. Elige tu ritmo: cumbres para valientes, templos para contemplativos y senderos para madrugadores.</p>
+    </div>
+
+    <div class="grid grid-cols-12 gap-6">
+      <!-- Huayna Picchu (grande) -->
+      <article class="reveal group col-span-12 border border-ink/15 bg-parch transition-all duration-500 hover:-translate-y-1.5 hover:border-gold-500 hover:shadow-[0_24px_45px_-20px_rgba(19,28,22,.35)] lg:col-span-7">
+        <div class="relative overflow-hidden"><img src="https://picsum.photos/seed/huayna-picchu-peak/1000/620" alt="Huayna Picchu" loading="lazy" class="h-72 w-full object-cover transition-transform duration-700 group-hover:scale-105">
+          <span class="absolute left-4 top-4 bg-ink/80 px-3 py-1.5 text-[10px] uppercase tracking-[0.25em] text-gold-300">Solo 400 cupos / día</span></div>
+        <div class="p-7">
+          <div class="flex flex-wrap items-center gap-3 text-[10px] uppercase tracking-[0.2em] text-stone-500"><span>2,720 m</span><span class="text-gold-500">✦</span><span>2 h ida y vuelta</span><span class="text-gold-500">✦</span><span class="text-terra">Dificultad alta</span></div>
+          <h3 class="mt-3 font-display text-3xl">Huayna Picchu</h3>
+          <p class="mt-3 text-sm leading-relaxed text-ink/70">La montaña joven que vigila la ciudadela. Sus escaleras talladas en roca viva y el Templo de la Luna recompensan con la postal definitiva del santuario.</p>
+        </div>
+      </article>
+
+      <!-- Montaña Machu Picchu -->
+      <article class="reveal group col-span-12 border border-ink/15 bg-parch transition-all duration-500 hover:-translate-y-1.5 hover:border-gold-500 hover:shadow-[0_24px_45px_-20px_rgba(19,28,22,.35)] lg:col-span-5" style="--d:.1s">
+        <div class="overflow-hidden"><img src="https://picsum.photos/seed/machu-mountain-trail/800/620" alt="Montaña Machu Picchu" loading="lazy" class="h-56 w-full object-cover transition-transform duration-700 group-hover:scale-105"></div>
+        <div class="p-7">
+          <div class="flex flex-wrap items-center gap-3 text-[10px] uppercase tracking-[0.2em] text-stone-500"><span>3,082 m</span><span class="text-gold-500">✦</span><span>3 h</span><span class="text-gold-500">✦</span><span class="text-gold-600">Media</span></div>
+          <h3 class="mt-3 font-display text-2xl">Montaña Machu Picchu</h3>
+          <p class="mt-3 text-sm leading-relaxed text-ink/70">La cumbre que da nombre al santuario: sendero entre orquídeas y vistas de 360° sobre el cañón.</p>
+        </div>
+      </article>
+
+      <!-- Inti Punku -->
+      <article class="reveal group col-span-12 border border-ink/15 bg-parch transition-all duration-500 hover:-translate-y-1.5 hover:border-gold-500 md:col-span-6 lg:col-span-4" style="--d:.05s">
+        <div class="overflow-hidden"><img src="https://picsum.photos/seed/inti-punku-sunrise/800/520" alt="Inti Punku, la Puerta del Sol" loading="lazy" class="h-44 w-full object-cover transition-transform duration-700 group-hover:scale-105"></div>
+        <div class="p-6">
+          <div class="text-[10px] uppercase tracking-[0.2em] text-stone-500">2,720 m ✦ 1.5 h ✦ Media</div>
+          <h3 class="mt-2 font-display text-2xl">Inti Punku</h3>
+          <p class="mt-2 text-sm leading-relaxed text-ink/70">La Puerta del Sol: el balcón donde el Camino Inca revela la ciudadela, dorada al amanecer.</p>
+        </div>
+      </article>
+
+      <!-- Intihuatana -->
+      <article class="reveal group col-span-12 border border-ink/15 bg-parch transition-all duration-500 hover:-translate-y-1.5 hover:border-gold-500 md:col-span-6 lg:col-span-4" style="--d:.12s">
+        <div class="overflow-hidden"><img src="https://picsum.photos/seed/intihuatana-stone/800/520" alt="Piedra Intihuatana" loading="lazy" class="h-44 w-full object-cover transition-transform duration-700 group-hover:scale-105"></div>
+        <div class="p-6">
+          <div class="text-[10px] uppercase tracking-[0.2em] text-stone-500">Ceremonial ✦ Astronómico</div>
+          <h3 class="mt-2 font-display text-2xl">Intihuatana</h3>
+          <p class="mt-2 text-sm leading-relaxed text-ink/70">«Donde se amarra el sol»: el reloj de piedra que marca solsticios y equinoccios con precisión asombrosa.</p>
+        </div>
+      </article>
+
+      <!-- Templo del Sol -->
+      <article class="reveal group col-span-12 border border-ink/15 bg-parch transition-all duration-500 hover:-translate-y-1.5 hover:border-gold-500 md:col-span-6 lg:col-span-4" style="--d:.2s">
+        <div class="overflow-hidden"><img src="https://picsum.photos/seed/sun-temple-cusco/800/520" alt="Templo del Sol" loading="lazy" class="h-44 w-full object-cover transition-transform duration-700 group-hover:scale-105"></div>
+        <div class="p-6">
+          <div class="text-[10px] uppercase tracking-[0.2em] text-stone-500">Ceremonial ✦ Solsticio</div>
+          <h3 class="mt-2 font-display text-2xl">Templo del Sol</h3>
+          <p class="mt-2 text-sm leading-relaxed text-ink/70">La torre curva orientada al solsticio de junio; bajo ella, la roca madre que custodia la tumba real.</p>
+        </div>
+      </article>
+
+      <!-- Llaqta completa (horizontal) -->
+      <article class="reveal group col-span-12 grid border border-ink/15 bg-moss-800 text-cream transition-all duration-500 hover:border-gold-500 md:grid-cols-2" style="--d:.1s">
+        <div class="order-2 overflow-hidden md:order-1"><img src="https://picsum.photos/seed/llaqta-full-circuit/900/620" alt="Vista completa de la llaqta" loading="lazy" class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"></div>
+        <div class="order-1 p-8 md:order-2 md:p-10">
+          <div class="text-[10px] uppercase tracking-[0.25em] text-gold-300">2,430 m ✦ 4 h ✦ Guía obligatorio</div>
+          <h3 class="mt-3 font-display text-3xl">La Llaqta completa</h3>
+          <p class="mt-4 text-sm leading-relaxed text-stone-300">Plazas, templos y barrios agrícolas en un solo recorrido guiado: la manera más completa de entender cómo vivía una ciudad inca suspendida entre dos apus.</p>
+          <a href="#reserva" class="mt-6 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.25em] text-gold-300 hover:text-gold-400">Incluida en todo boleto <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 03 RUTAS (tabs) ================= -->
+<section id="rutas" class="scroll-mt-24 bg-moss-800 py-28 text-cream">
+  <div class="mx-auto max-w-7xl px-6 lg:px-10">
+    <p class="reveal-left mb-4 flex items-center gap-3 text-xs font-bold uppercase tracking-[0.3em] text-gold-400"><span class="inline-block h-px w-10 bg-gold-500"></span>03 · Rutas</p>
+    <h2 class="reveal-left font-display text-4xl font-medium leading-tight md:text-5xl" style="--d:.1s">Tres caminos, <em class="text-gold-400">un solo destino</em></h2>
+
+    <div class="mt-12 flex flex-wrap gap-3">
+      <button data-route="inca"    class="route-tab border border-gold-500 bg-gold-500 px-6 py-3 text-[11px] font-bold uppercase tracking-[0.22em] text-ink transition-colors">Camino Inca · 4 días</button>
+      <button data-route="salk"    class="route-tab border border-cream/25 px-6 py-3 text-[11px] font-bold uppercase tracking-[0.22em] text-stone-300 transition-colors hover:border-gold-400 hover:text-gold-300">Salkantay · 5 días</button>
+      <button data-route="tren"    class="route-tab border border-cream/25 px-6 py-3 text-[11px] font-bold uppercase tracking-[0.22em] text-stone-300 transition-colors hover:border-gold-400 hover:text-gold-300">Tren panorámico · 1 día</button>
+    </div>
+
+    <!-- Panel Camino Inca -->
+    <div id="panel-inca" class="route-panel mt-12 grid items-start gap-10 lg:grid-cols-12">
+      <div class="lg:col-span-5">
+        <h3 class="font-display text-3xl">Camino Inca Clásico</h3>
+        <p class="mt-4 text-sm leading-relaxed text-stone-300">La peregrinación original por el Qhapaq Ñan: selva nublada, pasos de montaña y la llegada triunfal por Inti Punku justo cuando la niebla se abre.</p>
+        <dl class="mt-6 border-t border-cream/15 text-sm">
+          <div class="grid grid-cols-2 border-b border-cream/15 py-3"><dt class="text-stone-400">Distancia</dt><dd class="text-right">39 km</dd></div>
+          <div class="grid grid-cols-2 border-b border-cream/15 py-3"><dt class="text-stone-400">Duración</dt><dd class="text-right">4 días / 3 noches</dd></div>
+          <div class="grid grid-cols-2 border-b border-cream/15 py-3"><dt class="text-stone-400">Altitud máxima</dt><dd class="text-right">4,215 m (Warmiwañusca)</dd></div>
+          <div class="grid grid-cols-2 border-b border-cream/15 py-3"><dt class="text-stone-400">Dificultad</dt><dd class="flex justify-end gap-1.5 pt-1"><span class="h-1.5 w-7 bg-gold-500"></span><span class="h-1.5 w-7 bg-gold-500"></span><span class="h-1.5 w-7 bg-gold-500"></span><span class="h-1.5 w-7 bg-gold-500"></span><span class="h-1.5 w-7 bg-cream/15"></span></dd></div>
+          <div class="grid grid-cols-2 border-b border-cream/15 py-3"><dt class="text-stone-400">Temporada</dt><dd class="text-right">Abril – octubre</dd></div>
+        </dl>
+        <p class="mt-6 font-display text-2xl">Desde <span class="text-gold-400">US$ 690</span> <span class="text-sm text-stone-400">/ persona</span></p>
+        <p class="mt-2 text-xs text-stone-400">Incluye guía bilingüe, porteadores, campamento, alimentación y tren de retorno.</p>
+        <a href="#reserva" class="mt-6 inline-block border border-gold-500 px-6 py-3 text-[11px] font-bold uppercase tracking-[0.25em] text-gold-300 transition-colors hover:bg-gold-500 hover:text-ink">Reservar esta ruta</a>
+      </div>
+      <figure class="relative lg:col-span-7"><img src="https://picsum.photos/seed/inca-trail-camp/1100/700" alt="Campamento en el Camino Inca" loading="lazy" class="w-full border border-cream/10 object-cover">
+        <figcaption class="absolute left-4 top-4 bg-ink/80 px-3 py-1.5 text-[10px] uppercase tracking-[0.25em] text-gold-300">Día 4 · Amanecer en Inti Punku</figcaption></figure>
+    </div>
+
+    <!-- Panel Salkantay -->
+    <div id="panel-salk" class="route-panel mt-12 hidden grid items-start gap-10 lg:grid-cols-12">
+      <div class="lg:col-span-5">
+        <h3 class="font-display text-3xl">Salkantay Trek</h3>
+        <p class="mt-4 text-sm leading-relaxed text-stone-300">El gran desafío andino: del nevado Salkantay a la selva cafetalera de Santa Teresa, pasando por lagunas turquesa y baños termales.</p>
+        <dl class="mt-6 border-t border-cream/15 text-sm">
+          <div class="grid grid-cols-2 border-b border-cream/15 py-3"><dt class="text-stone-400">Distancia</dt><dd class="text-right">74 km</dd></div>
+          <div class="grid grid-cols-2 border-b border-cream/15 py-3"><dt class="text-stone-400">Duración</dt><dd class="text-right">5 días / 4 noches</dd></div>
+          <div class="grid grid-cols-2 border-b border-cream/15 py-3"><dt class="text-stone-400">Altitud máxima</dt><dd class="text-right">4,630 m (Paso Salkantay)</dd></div>
+          <div class="grid grid-cols-2 border-b border-cream/15 py-3"><dt class="text-stone-400">Dificultad</dt><dd class="flex justify-end gap-1.5 pt-1"><span class="h-1.5 w-7 bg-gold-500"></span><span class="h-1.5 w-7 bg-gold-500"></span><span class="h-1.5 w-7 bg-gold-500"></span><span class="h-1.5 w-7 bg-gold-500"></span><span class="h-1.5 w-7 bg-gold-500"></span></dd></div>
+          <div class="grid grid-cols-2 border-b border-cream/15 py-3"><dt class="text-stone-400">Temporada</dt><dd class="text-right">Abril – noviembre</dd></div>
+        </dl>
+        <p class="mt-6 font-display text-2xl">Desde <span class="text-gold-400">US$ 540</span> <span class="text-sm text-stone-400">/ persona</span></p>
+        <p class="mt-2 text-xs text-stone-400">Incluye guía, cocinero, caballos de carga, lodges y entrada al santuario.</p>
+        <a href="#reserva" class="mt-6 inline-block border border-gold-500 px-6 py-3 text-[11px] font-bold uppercase tracking-[0.25em] text-gold-300 transition-colors hover:bg-gold-500 hover:text-ink">Reservar esta ruta</a>
+      </div>
+      <figure class="relative lg:col-span-7"><img src="https://picsum.photos/seed/salkantay-snow-peak/1100/700" alt="Nevado Salkantay" loading="lazy" class="w-full border border-cream/10 object-cover">
+        <figcaption class="absolute left-4 top-4 bg-ink/80 px-3 py-1.5 text-[10px] uppercase tracking-[0.25em] text-gold-300">Paso Salkantay · 4,630 m</figcaption></figure>
+    </div>
+
+    <!-- Panel Tren -->
+    <div id="panel-tren" class="route-panel mt-12 hidden grid items-start gap-10 lg:grid-cols-12">
+      <div class="lg:col-span-5">
+        <h3 class="font-display text-3xl">Tren panorámico</h3>
+        <p class="mt-4 text-sm leading-relaxed text-stone-300">El clásico confortable: tren con techo vidriado desde Ollantaytambo hasta Aguas Calientes, entre paredes de roca y cascadas, más bus de subida entre 13 curvas.</p>
+        <dl class="mt-6 border-t border-cream/15 text-sm">
+          <div class="grid grid-cols-2 border-b border-cream/15 py-3"><dt class="text-stone-400">Trayecto</dt><dd class="text-right">1 h 30 + bus 25 min</dd></div>
+          <div class="grid grid-cols-2 border-b border-cream/15 py-3"><dt class="text-stone-400">Duración</dt><dd class="text-right">Visita de 1 día</dd></div>
+          <div class="grid grid-cols-2 border-b border-cream/15 py-3"><dt class="text-stone-400">Altitud destino</dt><dd class="text-right">2,430 m</dd></div>
+          <div class="grid grid-cols-2 border-b border-cream/15 py-3"><dt class="text-stone-400">Dificultad</dt><dd class="flex justify-end gap-1.5 pt-1"><span class="h-1.5 w-7 bg-gold-500"></span><span class="h-1.5 w-7 bg-cream/15"></span><span class="h-1.5 w-7 bg-cream/15"></span><span class="h-1.5 w-7 bg-cream/15"></span><span class="h-1.5 w-7 bg-cream/15"></span></dd></div>
+          <div class="grid grid-cols-2 border-b border-cream/15 py-3"><dt class="text-stone-400">Temporada</dt><dd class="text-right">Todo el año</dd></div>
+        </dl>
+        <p class="mt-6 font-display text-2xl">Desde <span class="text-gold-400">US$ 98</span> <span class="text-sm text-stone-400">/ persona</span></p>
+        <p class="mt-2 text-xs text-stone-400">Incluye tren escénico, bus de subida y bajada, y entrada por turno.</p>
+        <a href="#reserva" class="mt-6 inline-block border border-gold-500 px-6 py-3 text-[11px] font-bold uppercase tracking-[0.25em] text-gold-300 transition-colors hover:bg-gold-500 hover:text-ink">Reservar esta ruta</a>
+      </div>
+      <figure class="relative lg:col-span-7"><img src="https://picsum.photos/seed/vistadome-train-valley/1100/700" alt="Tren panorámico rumbo a Aguas Calientes" loading="lazy" class="w-full border border-cream/10 object-cover">
+        <figcaption class="absolute left-4 top-4 bg-ink/80 px-3 py-1.5 text-[10px] uppercase tracking-[0.25em] text-gold-300">Valle del Urubamba · Km 88</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- ================= GALERÍA (postales) ================= -->
+<section id="galeria" class="scroll-mt-24 overflow-hidden py-28">
+  <div class="mx-auto max-w-7xl px-6 lg:px-10">
+    <div class="mb-14 flex flex-wrap items-end justify-between gap-6">
+      <div>
+        <p class="reveal-left mb-4 flex items-center gap-3 text-xs font-bold uppercase tracking-[0.3em] text-gold-600"><span class="inline-block h-px w-10 bg-gold-500"></span>Postales del viaje</p>
+        <h2 class="reveal-left font-display text-4xl font-medium leading-tight md:text-5xl" style="--d:.1s">Recuerdos que <em class="text-terra">no se revelan</em> en pantalla</h2>
+      </div>
+      <p class="reveal max-w-xs text-sm text-ink/60" style="--d:.15s">Fotografías ilustrativas. La niebla real, prometemos, es todavía mejor.</p>
+    </div>
+
+    <div class="flex flex-wrap items-start justify-center gap-8 lg:gap-10">
+      <figure class="postcard relative w-64 rotate-[-5deg] bg-white p-3 pb-4 shadow-xl"><span class="absolute -top-2 left-1/2 h-5 w-16 -translate-x-1/2 rotate-[-4deg] bg-gold-400/40"></span><img src="https://picsum.photos/seed/llama-guardian/560/560" alt="Llama en la ciudadela" loading="lazy" class="h-56 w-full object-cover"><figcaption class="pt-3 text-center font-display text-sm italic text-ink/70">Llamas guardianas</figcaption></figure>
+      <figure class="postcard relative w-64 rotate-[4deg] bg-white p-3 pb-4 shadow-xl lg:mt-10"><span class="absolute -top-2 left-1/2 h-5 w-16 -translate-x-1/2 rotate-[3deg] bg-gold-400/40"></span><img src="https://picsum.photos/seed/mist-terraces-dawn/560/560" alt="Niebla sobre los andenes" loading="lazy" class="h-56 w-full object-cover"><figcaption class="pt-3 text-center font-display text-sm italic text-ink/70">Niebla sobre andenes</figcaption></figure>
+      <figure class="postcard relative w-64 rotate-[-3deg] bg-white p-3 pb-4 shadow-xl"><span class="absolute -top-2 left-1/2 h-5 w-16 -translate-x-1/2 rotate-[-5deg] bg-gold-400/40"></span><img src="https://picsum.photos/seed/cusco-plaza-stone/560/560" alt="Calles de piedra de Cusco" loading="lazy" class="h-56 w-full object-cover"><figcaption class="pt-3 text-center font-display text-sm italic text-ink/70">Cusco, ombligo del mundo</figcaption></figure>
+      <figure class="postcard relative w-64 rotate-[6deg] bg-white p-3 pb-4 shadow-xl lg:mt-6"><span class="absolute -top-2 left-1/2 h-5 w-16 -translate-x-1/2 rotate-[4deg] bg-gold-400/40"></span><img src="https://picsum.photos/seed/urubamba-river-canyon/560/560" alt="Río Urubamba" loading="lazy" class="h-56 w-full object-cover"><figcaption class="pt-3 text-center font-display text-sm italic text-ink/70">El Urubamba ruge abajo</figcaption></figure>
+      <figure class="postcard relative w-64 rotate-[-6deg] bg-white p-3 pb-4 shadow-xl lg:mt-12"><span class="absolute -top-2 left-1/2 h-5 w-16 -translate-x-1/2 rotate-[-3deg] bg-gold-400/40"></span><img src="https://picsum.photos/seed/sunrise-gate-andes/560/560" alt="Amanecer desde Inti Punku" loading="lazy" class="h-56 w-full object-cover"><figcaption class="pt-3 text-center font-display text-sm italic text-ink/70">Inti Punku, 5:40 a. m.</figcaption></figure>
+      <figure class="postcard relative w-64 rotate-[3deg] bg-white p-3 pb-4 shadow-xl"><span class="absolute -top-2 left-1/2 h-5 w-16 -translate-x-1/2 rotate-[5deg] bg-gold-400/40"></span><img src="https://picsum.photos/seed/inca-stone-detail/560/560" alt="Detalle de piedra inca" loading="lazy" class="h-56 w-full object-cover"><figcaption class="pt-3 text-center font-display text-sm italic text-ink/70">Cero argamasa, 500 años</figcaption></figure>
+      <figure class="postcard relative w-64 rotate-[-4deg] bg-white p-3 pb-4 shadow-xl lg:mt-8"><span class="absolute -top-2 left-1/2 h-5 w-16 -translate-x-1/2 rotate-[-4deg] bg-gold-400/40"></span><img src="https://picsum.photos/seed/condor-flight-canyon/560/560" alt="Cóndor sobre el cañón" loading="lazy" class="h-56 w-full object-cover"><figcaption class="pt-3 text-center font-display text-sm italic text-ink/70">El apu en vuelo</figcaption></figure>
+      <figure class="postcard relative w-64 rotate-[5deg] bg-white p-3 pb-4 shadow-xl lg:mt-4"><span class="absolute -top-2 left-1/2 h-5 w-16 -translate-x-1/2 rotate-[2deg] bg-gold-400/40"></span><img src="https://picsum.photos/seed/train-to-clouds/560/560" alt="Tren hacia Aguas Calientes" loading="lazy" class="h-56 w-full object-cover"><figcaption class="pt-3 text-center font-display text-sm italic text-ink/70">Tren hacia las nubes</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- ================= TESTIMONIOS ================= -->
+<section class="bg-cream py-28">
+  <div class="mx-auto max-w-7xl px-6 lg:px-10">
+    <p class="reveal-left mb-4 flex items-center gap-3 text-xs font-bold uppercase tracking-[0.3em] text-gold-600"><span class="inline-block h-px w-10 bg-gold-500"></span>04 · Voces del camino</p>
+    <div class="mt-12 grid gap-12 lg:grid-cols-3">
+      <blockquote class="reveal">
+        <span class="font-display text-7xl leading-none text-gold-500">“</span>
+        <p class="-mt-4 font-display text-2xl italic leading-snug">No es una ruina: es una ciudad que todavía late. Sentí que alguien acababa de encender el fuego.</p>
+        <footer class="mt-5 text-xs uppercase tracking-[0.3em] text-stone-500">Valentina R. — Bogotá, Colombia</footer>
+      </blockquote>
+      <blockquote class="reveal lg:mt-14" style="--d:.15s">
+        <span class="font-display text-7xl leading-none text-gold-500">“</span>
+        <p class="-mt-4 font-display text-2xl italic leading-snug">Vi amanecer desde Inti Punku y entendí, por fin, por qué la llaman sagrada.</p>
+        <footer class="mt-5 text-xs uppercase tracking-[0.3em] text-stone-500">Jonas M. — Berlín, Alemania</footer>
+      </blockquote>
+      <blockquote class="reveal lg:mt-28" style="--d:.3s">
+        <span class="font-display text-7xl leading-none text-gold-500">“</span>
+        <p class="-mt-4 font-display text-2xl italic leading-snug">Subí Huayna Picchu con las piernas temblando y bajé con el alma llena.</p>
+        <footer class="mt-5 text-xs uppercase tracking-[0.3em] text-stone-500">Aiko T. — Osaka, Japón</footer>
+      </blockquote>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 05 VISITA ================= -->
+<section id="visita" class="scroll-mt-24 py-28">
+  <div class="mx-auto grid max-w-7xl gap-14 px-6 lg:grid-cols-12 lg:px-10">
+    <div class="lg:col-span-7">
+      <p class="reveal-left mb-4 flex items-center gap-3 text-xs font-bold uppercase tracking-[0.3em] text-gold-600"><span class="inline-block h-px w-10 bg-gold-500"></span>05 · Planifica tu visita</p>
+      <h2 class="reveal-left font-display text-4xl font-medium leading-tight md:text-5xl" style="--d:.1s">Lo esencial, <em class="text-terra">sin letras pequeñas</em></h2>
+      <div class="mt-12">
+        <div class="reveal grid grid-cols-1 gap-2 border-t border-ink/15 py-6 transition-colors hover:bg-cream md:grid-cols-[200px_1fr] md:gap-6 md:px-2">
+          <p class="text-[11px] font-bold uppercase tracking-[0.25em] text-gold-600">Horario</p>
+          <p class="text-sm text-ink/75"><strong class="font-display text-lg text-ink">6:00 – 17:30</strong><br>Ingresos por turnos de una hora; último acceso según circuito.</p>
+        </div>
+        <div class="reveal grid grid-cols-1 gap-2 border-t border-ink/15 py-6 transition-colors hover:bg-cream md:grid-cols-[200px_1fr] md:gap-6 md:px-2" style="--d:.05s">
+          <p class="text-[11px] font-bold uppercase tracking-[0.25em] text-gold-600">Entradas</p>
+          <p class="text-sm text-ink/75"><strong class="font-display text-lg text-ink">Desde S/ 152</strong><br>Tarifa adulto extranjero. Estudiantes y menores con descuento. Compra online hasta con 6 meses de anticipación.</p>
+        </div>
+        <div class="reveal grid grid-cols-1 gap-2 border-t border-ink/15 py-6 transition-colors hover:bg-cream md:grid-cols-[200px_1fr] md:gap-6 md:px-2" style="--d:.1s">
+          <p class="text-[11px] font-bold uppercase tracking-[0.25em] text-gold-600">Mejor época</p>
+          <p class="text-sm text-ink/75"><strong class="font-display text-lg text-ink">Abril – octubre</strong><br>Estación seca. Junio y julio concentran más visitantes: reserva temprano.</p>
+        </div>
+        <div class="reveal grid grid-cols-1 gap-2 border-t border-ink/15 py-6 transition-colors hover:bg-cream md:grid-cols-[200px_1fr] md:gap-6 md:px-2" style="--d:.15s">
+          <p class="text-[11px] font-bold uppercase tracking-[0.25em] text-gold-600">Cómo llegar</p>
+          <p class="text-sm text-ink/75"><strong class="font-display text-lg text-ink">Tren + bus</strong><br>Ollantaytambo → Aguas Calientes (1 h 30) y bus de subida entre 13 curvas (25 min).</p>
+        </div>
+        <div class="reveal grid grid-cols-1 gap-2 border-t border-ink/15 py-6 transition-colors hover:bg-cream md:grid-cols-[200px_1fr] md:gap-6 md:px-2" style="--d:.2s">
+          <p class="text-[11px] font-bold uppercase tracking-[0.25em] text-gold-600">Circuitos</p>
+          <p class="text-sm text-ink/75"><strong class="font-display text-lg text-ink">5 circuitos oficiales</strong><br>Cada boleto asigna una ruta; la Ruta 2 incluye la postal clásica.</p>
+        </div>
+        <div class="reveal grid grid-cols-1 gap-2 border-y border-ink/15 py-6 transition-colors hover:bg-cream md:grid-cols-[200px_1fr] md:gap-6 md:px-2" style="--d:.25s">
+          <p class="text-[11px] font-bold uppercase tracking-[0.25em] text-gold-600">Documentos</p>
+          <p class="text-sm text-ink/75"><strong class="font-display text-lg text-ink">Pasaporte en mano</strong><br>Boleto nominal e intransferible. Sello conmemorativo gratuito a la salida.</p>
+        </div>
+      </div>
+    </div>
+
+    <aside class="lg:col-span-5">
+      <div class="reveal bg-moss-800 p-8 text-cream lg:sticky lg:top-28" style="--d:.15s">
+        <p class="text-[11px] font-bold uppercase tracking-[0.3em] text-gold-400">Consejos del guardaparque</p>
+        <div class="mt-8 space-y-8">
+          <div class="flex gap-5"><span class="font-display text-4xl text-gold-500">01</span><p class="text-sm leading-relaxed text-stone-300"><strong class="block font-display text-lg text-cream">Aclimátate 48 horas en Cusco.</strong>El mate de coca y el descanso hacen milagros contra el soroche.</p></div>
+          <div class="flex gap-5"><span class="font-display text-4xl text-gold-500">02</span><p class="text-sm leading-relaxed text-stone-300"><strong class="block font-display text-lg text-cream">Viste en capas.</strong>Sol fuerte a mediodía, lluvia sin aviso, frío a la sombra: los Andes cambian de opinión rápido.</p></div>
+          <div class="flex gap-5"><span class="font-display text-4xl text-gold-500">03</span><p class="text-sm leading-relaxed text-stone-300"><strong class="block font-display text-lg text-cream">Agua, sol y pasaporte.</strong>Lleva 2 litros de agua y protector solar: dentro de la llaqta no hay tiendas.</p></div>
+        </div>
+        <div class="mt-10 border-t border-cream/15 pt-6 text-xs leading-relaxed text-stone-400">
+          El santuario es un área natural protegida por el Estado peruano. No dejes más que huellas, no te lleves más que fotografías. <span class="text-gold-400">Tupananchiskama</span> — hasta pronto, en quechua.
+        </div>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<!-- ================= 06 RESERVA ================= -->
+<section id="reserva" class="relative scroll-mt-24 overflow-hidden py-28 text-cream">
+  <img src="https://picsum.photos/seed/night-citadel-stars/1920/1080" alt="" class="absolute inset-0 h-full w-full object-cover" loading="lazy">
+  <div class="absolute inset-0 bg-moss-900/92"></div>
+
+  <div class="relative mx-auto max-w-7xl px-6 lg:px-10">
+    <p class="reveal-left mb-4 flex items-center gap-3 text-xs font-bold uppercase tracking-[0.3em] text-gold-400"><span class="inline-block h-px w-10 bg-gold-500"></span>06 · Reserva</p>
+    <h2 class="reveal-left font-display text-4xl font-medium leading-tight md:text-5xl" style="--d:.1s">Tu encuentro con <em class="text-gold-400">los apus</em></h2>
+
+    <div class="mt-14 grid gap-10 lg:grid-cols-12">
+      <!-- Formulario -->
+      <div class="reveal bg-cream p-8 text-ink lg:col-span-7 lg:p-10" style="--d:.15s">
+        <div id="formView">
+          <p class="text-[11px] font-bold uppercase tracking-[0.25em] text-gold-600">Paso 1 — Elige tu circuito</p>
+          <div class="mt-4 grid gap-3 md:grid-cols-3">
+            <label><input type="radio" name="circuito" value="llaqta" checked class="peer sr-only">
+              <div class="cursor-pointer border border-ink/15 p-4 transition-all peer-checked:border-gold-500 peer-checked:bg-gold-500/10 peer-checked:shadow-[inset_0_0_0_1px_#C9973B]">
+                <p class="font-display text-lg leading-tight">Llaqta clásica</p><p class="mt-1 text-xs text-ink/60">Ciudadela + circuitos guiados</p><p class="mt-2 text-sm font-bold text-gold-600">desde S/ 152</p></div></label>
+            <label><input type="radio" name="circuito" value="huayna" class="peer sr-only">
+              <div class="cursor-pointer border border-ink/15 p-4 transition-all peer-checked:border-gold-500 peer-checked:bg-gold-500/10 peer-checked:shadow-[inset_0_0_0_1px_#C9973B]">
+                <p class="font-display text-lg leading-tight">+ Huayna Picchu</p><p class="mt-1 text-xs text-ink/60">Cumbre joven · cupos limitados</p><p class="mt-2 text-sm font-bold text-gold-600">desde S/ 200</p></div></label>
+            <label><input type="radio" name="circuito" value="montana" class="peer sr-only">
+              <div class="cursor-pointer border border-ink/15 p-4 transition-all peer-checked:border-gold-500 peer-checked:bg-gold-500/10 peer-checked:shadow-[inset_0_0_0_1px_#C9973B]">
+                <p class="font-display text-lg leading-tight">+ Montaña</p><p class="mt-1 text-xs text-ink/60">Cumbre homónima · 3,082 m</p><p class="mt-2 text-sm font-bold text-gold-600">desde S/ 200</p></div></label>
+          </div>
+
+          <p class="mt-8 text-[11px] font-bold uppercase tracking-[0.25em] text-gold-600">Paso 2 — Viajeros</p>
+          <div class="mt-4 divide-y divide-ink/10 border-y border-ink/15">
+            <div class="flex items-center justify-between py-4"><div><p class="font-display text-lg">Adulto</p><p class="text-xs text-ink/50">18 años a más</p></div>
+              <div class="flex items-center gap-4"><button type="button" data-target="adulto" data-step="-1" class="grid h-9 w-9 place-items-center border border-ink/25 text-lg transition-colors hover:border-gold-500 hover:text-gold-600">−</button><span id="cnt-adulto" class="w-6 text-center font-display text-xl">2</span><button type="button" data-target="adulto" data-step="1" class="grid h-9 w-9 place-items-center border border-ink/25 text-lg transition-colors hover:border-gold-500 hover:text-gold-600">+</button></div></div>
+            <div class="flex items-center justify-between py-4"><div><p class="font-display text-lg">Estudiante</p><p class="text-xs text-ink/50">Pregrado, hasta 25 años · carnet vigente</p></div>
+              <div class="flex items-center gap-4"><button type="button" data-target="estudiante" data-step="-1" class="grid h-9 w-9 place-items-center border border-ink/25 text-lg transition-colors hover:border-gold-500 hover:text-gold-600">−</button><span id="cnt-estudiante" class="w-6 text-center font-display text-xl">0</span><button type="button" data-target="estudiante" data-step="1" class="grid h-9 w-9 place-items-center border border-ink/25 text-lg transition-colors hover:border-gold-500 hover:text-gold-600">+</button></div></div>
+            <div class="flex items-center justify-between py-4"><div><p class="font-display text-lg">Menor</p><p class="text-xs text-ink/50">3 a 17 años · menores de 3 no pagan</p></div>
+              <div class="flex items-center gap-4"><button type="button" data-target="menor" data-step="-1" class="grid h-9 w-9 place-items-center border border-ink/25 text-lg transition-colors hover:border-gold-500 hover:text-gold-600">−</button><span id="cnt-menor" class="w-6 text-center font-display text-xl">0</span><button type="button" data-target="menor" data-step="1" class="grid h-9 w-9 place-items-center border border-ink/25 text-lg transition-colors hover:border-gold-500 hover:text-gold-600">+</button></div></div>
+          </div>
+
+          <p class="mt-8 text-[11px] font-bold uppercase tracking-[0.25em] text-gold-600">Paso 3 — Fecha y turno</p>
+          <div class="mt-4 grid gap-4 md:grid-cols-2">
+            <input id="fecha" type="date" class="w-full border border-ink/20 bg-white px-4 py-3.5 text-sm outline-none transition-colors focus:border-gold-500">
+            <select id="turno" class="w-full border border-ink/20 bg-white px-4 py-3.5 text-sm outline-none transition-colors focus:border-gold-500">
+              <option value="mañana">Turno mañana · 6:00 – 12:00</option>
+              <option value="tarde">Turno tarde · 12:00 – 17:30</option>
+            </select>
+          </div>
+
+          <div id="totalBox" class="mt-8 flex flex-wrap items-end justify-between gap-4 border-t border-ink/15 pt-6">
+            <div><p class="text-[11px] uppercase tracking-[0.25em] text-stone-500">Total estimado</p><p id="total" class="font-display text-4xl text-ink">S/ 0</p><p class="mt-1 text-xs text-ink/50">Precios referenciales en soles. Demo sin pago real.</p></div>
+            <button id="reservarBtn" type="button" class="group inline-flex items-center gap-3 bg-gold-500 px-10 py-4 text-xs font-bold uppercase tracking-[0.25em] text-ink transition-colors hover:bg-gold-300">
+              Reservar ahora <svg class="h-4 w-4 transition-transform group-hover:translate-x-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </button>
+          </div>
         </div>
 
-        <!-- Contenido Hero -->
-        <div class="relative z-10 max-w-4xl mx-auto text-center px-6 pt-20">
-            <span class="inline-block bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 font-semibold text-xs tracking-widest uppercase px-4 py-1.5 rounded-full mb-6 backdrop-blur-md">
-                Maravilla del Mundo Moderno
-            </span>
-            <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold text-white tracking-tight leading-tight mb-6">
-                Siente la magia ancestral de <span class="bg-gradient-to-r from-emerald-400 to-teal-200 bg-clip-text text-transparent">Machu Picchu</span>
-            </h1>
-            <p class="text-lg md:text-xl text-slate-300 font-normal max-w-2xl mx-auto mb-10 leading-relaxed">
-                Camina entre las nubes, explora la mística arquitectura inca y vive la aventura de tu vida en el corazón de los Andes peruanos.
-            </p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                <a href="#reserva" class="w-full sm:w-auto bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-base px-8 py-4 rounded-full shadow-lg shadow-emerald-500/25 transition-all duration-300 transform hover:-translate-y-0.5">
-                    Planificar mi Aventura
-                </a>
-                <a href="#experiencias" class="w-full sm:w-auto bg-white/10 hover:bg-white/20 text-white font-semibold text-base px-8 py-4 rounded-full backdrop-blur-md border border-white/20 transition-all duration-300">
-                    Ver Experiencias
-                </a>
-            </div>
+        <!-- Éxito -->
+        <div id="okView" class="hidden py-6 text-center">
+          <div class="mx-auto grid h-16 w-16 place-items-center rounded-full border-2 border-gold-500 text-gold-600">
+            <svg class="h-8 w-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>
+          </div>
+          <h3 class="mt-6 font-display text-3xl">¡Solicitud recibida!</h3>
+          <p id="resumen" class="mx-auto mt-4 max-w-md text-sm leading-relaxed text-ink/70"></p>
+          <p class="mt-4 text-xs text-ink/50">Te enviaremos el boleto QR por correo (página demostrativa).</p>
+          <button id="resetBtn" type="button" class="mt-8 border border-ink/25 px-8 py-3 text-[11px] font-bold uppercase tracking-[0.25em] transition-colors hover:border-gold-500 hover:text-gold-600">Nueva búsqueda</button>
         </div>
-    </section>
+      </div>
 
-    <!-- Métricas / Datos -->
-    <section class="bg-slate-900 text-white py-12 border-b border-slate-800">
-        <div class="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-            <div>
-                <p class="text-3xl lg:text-4xl font-extrabold text-emerald-400">2,430m</p>
-                <p class="text-slate-400 text-sm mt-1">Altitud sobre el nivel del mar</p>
-            </div>
-            <div>
-                <p class="text-3xl lg:text-4xl font-extrabold text-emerald-400">Siglo XV</p>
-                <p class="text-slate-400 text-sm mt-1">Construcción inca</p>
-            </div>
-            <div>
-                <p class="text-3xl lg:text-4xl font-extrabold text-emerald-400">#1</p>
-                <p class="text-slate-400 text-sm mt-1">Destino en Sudamérica</p>
-            </div>
-            <div>
-                <p class="text-3xl lg:text-4xl font-extrabold text-emerald-400">UNESCO</p>
-                <p class="text-slate-400 text-sm mt-1">Patrimonio de la Humanidad</p>
-            </div>
+      <!-- Incluye -->
+      <aside class="reveal lg:col-span-5" style="--d:.25s">
+        <div class="border border-cream/15 p-8">
+          <p class="text-[11px] font-bold uppercase tracking-[0.3em] text-gold-400">Tu entrada incluye</p>
+          <ul class="mt-6 space-y-4 text-sm text-stone-300">
+            <li class="flex gap-3"><span class="text-gold-400">✦</span> Boleto electrónico con código QR nominal</li>
+            <li class="flex gap-3"><span class="text-gold-400">✦</span> Ingreso por el turno y circuito elegidos</li>
+            <li class="flex gap-3"><span class="text-gold-400">✦</span> Acompañamiento de guía certificado (circuitos)</li>
+            <li class="flex gap-3"><span class="text-gold-400">✦</span> Un cambio de fecha sin costo (sujeto a cupo)</li>
+            <li class="flex gap-3"><span class="text-gold-400">✦</span> Sello conmemorativo en tu pasaporte</li>
+          </ul>
         </div>
-    </section>
-
-    <!-- Experiencias / Qué ofrece -->
-    <section id="experiencias" class="py-24 max-w-7xl mx-auto px-6">
-        <div class="text-center max-w-2xl mx-auto mb-16">
-            <h2 class="text-emerald-600 font-bold text-sm tracking-wider uppercase mb-2">Una experiencia inolvidable</h2>
-            <p class="text-3xl md:text-4xl font-extrabold text-slate-900">Formas de explorar el santuario</p>
+        <div class="mt-6 border border-cream/15 bg-moss-800/60 p-8">
+          <p class="font-display text-2xl italic text-cream">¿Dudas antes de viajar?</p>
+          <p class="mt-3 text-sm leading-relaxed text-stone-300">Consulta fuentes oficiales: boletería del Ministerio de Cultura, iPerú Cusco y operadores autorizados del Camino Inca. Los cupos de temporada alta se agotan con semanas de anticipación.</p>
+          <p class="mt-5 text-[11px] uppercase tracking-[0.25em] text-gold-400">Plaza de Armas · Cusco, Perú</p>
         </div>
+      </aside>
+    </div>
+  </div>
+</section>
 
-        <div class="grid md:grid-cols-3 gap-8">
-            <!-- Tarjeta 1 -->
-            <div class="bg-white rounded-2xl overflow-hidden border border-slate-200/80 shadow-sm hover:shadow-xl transition-all duration-300 group">
-                <div class="relative h-64 overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1589802829985-817e51171b92?q=80&w=800&auto=format&fit=crop" 
-                         alt="Camino Inca" 
-                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                </div>
-                <div class="p-8">
-                    <h3 class="text-xl font-bold text-slate-900 mb-3">Trekking Camino Inca</h3>
-                    <p class="text-slate-600 text-sm leading-relaxed mb-6">
-                        Recorre la ruta legendaria a través de la selva alta y montañas, llegando a la Puerta del Sol (Intipunku).
-                    </p>
-                    <span class="text-emerald-600 font-bold text-sm flex items-center gap-1 group-hover:gap-2 transition-all">
-                        Saber más &rarr;
-                    </span>
-                </div>
-            </div>
+<!-- ================= FOOTER ================= -->
+<footer class="bg-ink text-stone-400">
+  <div class="overflow-hidden px-6 pt-16">
+    <p class="outline-text whitespace-nowrap text-center font-display text-[clamp(3rem,10vw,9rem)] font-semibold leading-none">MACHU PICCHU</p>
+  </div>
+  <div class="mx-auto grid max-w-7xl gap-10 px-6 py-16 md:grid-cols-4 lg:px-10">
+    <div>
+      <div class="flex items-center gap-3 text-cream">
+        <svg class="h-6 w-6 text-gold-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M19.1 4.9L17 7M7 17l-2.1 2.1"/></svg>
+        <span class="font-display text-lg">Santuario Histórico</span>
+      </div>
+      <p class="mt-4 text-sm leading-relaxed">La obra maestra de la arquitectura inca, protegida entre los Andes y la selva nublada del Cusco desde hace más de cinco siglos.</p>
+    </div>
+    <div>
+      <p class="text-[11px] font-bold uppercase tracking-[0.3em] text-gold-500">Explorar</p>
+      <ul class="mt-4 space-y-3 text-sm">
+        <li><a href="#santuario" class="transition-colors hover:text-gold-300">El santuario</a></li>
+        <li><a href="#experiencias" class="transition-colors hover:text-gold-300">Experiencias</a></li>
+        <li><a href="#rutas" class="transition-colors hover:text-gold-300">Rutas</a></li>
+        <li><a href="#galeria" class="transition-colors hover:text-gold-300">Galería</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="text-[11px] font-bold uppercase tracking-[0.3em] text-gold-500">Información</p>
+      <ul class="mt-4 space-y-3 text-sm">
+        <li><a href="#visita" class="transition-colors hover:text-gold-300">Planifica tu visita</a></li>
+        <li><a href="#reserva" class="transition-colors hover:text-gold-300">Reserva de entradas</a></li>
+        <li><span class="cursor-default">Dircetur Cusco</span></li>
+        <li><span class="cursor-default">Sernanp · iPerú</span></li>
+      </ul>
+    </div>
+    <div>
+      <p class="text-[11px] font-bold uppercase tracking-[0.3em] text-gold-500">Coordenadas</p>
+      <p class="mt-4 text-sm leading-relaxed">13°09′47″S · 72°32′44″O<br>2,430 m s. n. m.<br>Cusco — Perú</p>
+      <p class="mt-4 font-display italic text-gold-400">Tupananchiskama ✦</p>
+    </div>
+  </div>
+  <div class="border-t border-cream/10 py-6 text-center text-xs text-stone-500">
+    © 2026 · Página demostrativa con fines promocionales · Fotografías referenciales · Hecho con orgullo en los Andes
+  </div>
+</footer>
 
-            <!-- Tarjeta 2 -->
-            <div class="bg-white rounded-2xl overflow-hidden border border-slate-200/80 shadow-sm hover:shadow-xl transition-all duration-300 group">
-                <div class="relative h-64 overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1509299349698-dd22323b5963?q=80&w=800&auto=format&fit=crop" 
-                         alt="Tren panorámico" 
-                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                </div>
-                <div class="p-8">
-                    <h3 class="text-xl font-bold text-slate-900 mb-3">Tren Panorámico Vistadome</h3>
-                    <p class="text-slate-600 text-sm leading-relaxed mb-6">
-                        Viaja cómodamente contemplando los paisajes andinos a través de ventanas panorámicas en el techo.
-                    </p>
-                    <span class="text-emerald-600 font-bold text-sm flex items-center gap-1 group-hover:gap-2 transition-all">
-                        Saber más &rarr;
-                    </span>
-                </div>
-            </div>
+<script>
+const REDUCED = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-            <!-- Tarjeta 3 -->
-            <div class="bg-white rounded-2xl overflow-hidden border border-slate-200/80 shadow-sm hover:shadow-xl transition-all duration-300 group">
-                <div class="relative h-64 overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1569383746724-6f1b882b8f46?q=80&w=800&auto=format&fit=crop" 
-                         alt="Huayna Picchu" 
-                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                </div>
-                <div class="p-8">
-                    <h3 class="text-xl font-bold text-slate-900 mb-3">Ascenso a Huayna Picchu</h3>
-                    <p class="text-slate-600 text-sm leading-relaxed mb-6">
-                        Para los amantes del vértigo: escala la icónica montaña que domina la ciudadela para una vista panorámica única.
-                    </p>
-                    <span class="text-emerald-600 font-bold text-sm flex items-center gap-1 group-hover:gap-2 transition-all">
-                        Saber más &rarr;
-                    </span>
-                </div>
-            </div>
-        </div>
-    </section>
+/* ---- Nav + barra de progreso ---- */
+const nav = document.getElementById('nav');
+const progress = document.getElementById('progress');
+window.addEventListener('scroll', () => {
+  const y = window.scrollY;
+  if (y > 40) { nav.classList.add('bg-moss-900/95','shadow-lg','backdrop-blur-sm','border-b','border-gold-500/20'); }
+  else { nav.classList.remove('bg-moss-900/95','shadow-lg','backdrop-blur-sm','border-b','border-gold-500/20'); }
+  const h = document.documentElement.scrollHeight - window.innerHeight;
+  progress.style.width = (h > 0 ? (y / h) * 100 : 0) + '%';
+}, { passive: true });
 
-    <!-- Call to Action / Formulario -->
-    <section id="reserva" class="py-24 bg-slate-900 text-white relative overflow-hidden">
-        <div class="max-w-5xl mx-auto px-6 relative z-10">
-            <div class="bg-gradient-to-br from-slate-800 to-slate-900 border border-slate-700/60 rounded-3xl p-8 md:p-14 shadow-2xl grid lg:grid-cols-2 gap-12 items-center">
-                <div>
-                    <span class="text-emerald-400 font-bold text-sm tracking-wider uppercase">Reserva anticipada</span>
-                    <h2 class="text-3xl md:text-4xl font-extrabold mt-2 mb-4 leading-tight">¿Listo para vivir la historia?</h2>
-                    <p class="text-slate-300 text-sm leading-relaxed mb-6">
-                        Los cupos de ingreso a Machu Picchu son limitados por conservación. Asegura tus entradas y transporte con anticipación.
-                    </p>
-                    <ul class="space-y-3 text-sm text-slate-300">
-                        <li class="flex items-center gap-3">
-                            <span class="bg-emerald-500/20 text-emerald-400 p-1 rounded-full text-xs">✓</span> Guías locales certificados
-                        </li>
-                        <li class="flex items-center gap-3">
-                            <span class="bg-emerald-500/20 text-emerald-400 p-1 rounded-full text-xs">✓</span> Traslados y boletos incluidos
-                        </li>
-                        <li class="flex items-center gap-3">
-                            <span class="bg-emerald-500/20 text-emerald-400 p-1 rounded-full text-xs">✓</span> Cancelación flexible
-                        </li>
-                    </ul>
-                </div>
+/* ---- Menú móvil ---- */
+const mobileMenu = document.getElementById('mobileMenu');
+document.getElementById('menuBtn').addEventListener('click', () => mobileMenu.classList.remove('hidden'));
+document.getElementById('menuClose').addEventListener('click', () => mobileMenu.classList.add('hidden'));
+document.querySelectorAll('.mob-link').forEach(a => a.addEventListener('click', () => mobileMenu.classList.add('hidden')));
 
-                <!-- Formulario -->
-                <form class="space-y-4 bg-slate-950/60 p-6 rounded-2xl border border-slate-800 backdrop-blur-sm" onsubmit="event.preventDefault();">
-                    <div>
-                        <label class="block text-xs font-semibold uppercase text-slate-400 mb-1">Nombre completo</label>
-                        <input type="text" placeholder="Ej. Juan Pérez" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-emerald-500 transition-colors text-white placeholder-slate-500">
-                    </div>
-                    <div>
-                        <label class="block text-xs font-semibold uppercase text-slate-400 mb-1">Correo electrónico</label>
-                        <input type="email" placeholder="tu@email.com" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-emerald-500 transition-colors text-white placeholder-slate-500">
-                    </div>
-                    <div>
-                        <label class="block text-xs font-semibold uppercase text-slate-400 mb-1">Fecha estimada de viaje</label>
-                        <input type="date" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-emerald-500 transition-colors text-white">
-                    </div>
-                    <button type="submit" class="w-full bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold py-3.5 rounded-xl transition-all duration-300 shadow-lg shadow-emerald-500/20">
-                        Solicitar Cotización Gratuita
-                    </button>
-                </form>
-            </div>
-        </div>
-    </section>
+/* ---- Scramble decode ---- */
+function scramble(el) {
+  const target = el.textContent;
+  if (REDUCED) { el.textContent = target; return; }
+  const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZÁÉÍÓÚ·—✦';
+  const total = Math.max(24, target.length * 2);
+  let frame = 0;
+  (function tick() {
+    const p = frame / total;
+    let out = '';
+    for (let i = 0; i < target.length; i++) {
+      if (target[i] === ' ') { out += ' '; continue; }
+      out += i < p * target.length ? target[i] : chars[Math.floor(Math.random() * chars.length)];
+    }
+    el.textContent = out;
+    if (frame++ < total) requestAnimationFrame(tick); else el.textContent = target;
+  })();
+}
 
-    <!-- Footer -->
-    <footer class="bg-slate-950 border-t border-slate-800 text-slate-500 py-8 text-center text-xs">
-        <p>© 2026 Promoción Turística Machu Picchu. Todos los derechos reservados.</p>
-    </footer>
+/* ---- Contadores ---- */
+function animateCount(el) {
+  const target = parseFloat(el.dataset.count);
+  const fmt = n => Math.round(n).toLocaleString('es-PE');
+  if (REDUCED) { el.textContent = fmt(target); return; }
+  const dur = 1700, start = performance.now();
+  (function step(now) {
+    const p = Math.min(1, (now - start) / dur);
+    const e = 1 - Math.pow(1 - p, 3);
+    el.textContent = fmt(target * e);
+    if (p < 1) requestAnimationFrame(step);
+  })(performance.now());
+}
 
+/* ---- Reveals + disparadores ---- */
+const io = new IntersectionObserver(entries => {
+  entries.forEach(en => {
+    if (!en.isIntersecting) return;
+    en.target.classList.add('is-in');
+    if (en.target.hasAttribute('data-scramble')) scramble(en.target);
+    en.target.querySelectorAll('[data-count]').forEach(animateCount);
+    if (en.target.hasAttribute('data-count')) animateCount(en.target);
+    io.unobserve(en.target);
+  });
+}, { threshold: 0.15 });
+document.querySelectorAll('.reveal, .reveal-left, [data-scramble]').forEach(el => io.observe(el));
+document.querySelectorAll('[data-count]').forEach(el => {
+  el.closest('div') && io.observe(el.parentElement);
+});
+
+/* ---- Tabs de rutas ---- */
+const tabs = document.querySelectorAll('.route-tab');
+const panels = { inca: document.getElementById('panel-inca'), salk: document.getElementById('panel-salk'), tren: document.getElementById('panel-tren') };
+tabs.forEach(tab => tab.addEventListener('click', () => {
+  tabs.forEach(t => { t.classList.remove('bg-gold-500','border-gold-500','text-ink'); t.classList.add('border-cream/25','text-stone-300'); });
+  tab.classList.add('bg-gold-500','border-gold-500','text-ink'); tab.classList.remove('border-cream/25','text-stone-300');
+  Object.values(panels).forEach(p => p.classList.add('hidden'));
+  const panel = panels[tab.dataset.route];
+  panel.classList.remove('hidden');
+  panel.classList.remove('panel-in'); void panel.offsetWidth; panel.classList.add('panel-in');
+}));
+
+/* ---- Reserva ---- */
+const PRICES = {
+  llaqta:  { adulto: 152, estudiante: 77,  menor: 70  },
+  huayna:  { adulto: 200, estudiante: 125, menor: 118 },
+  montana: { adulto: 200, estudiante: 125, menor: 118 }
+};
+const NAMES = { llaqta: 'Llaqta clásica', huayna: 'Llaqta + Huayna Picchu', montana: 'Llaqta + Montaña' };
+const counts = { adulto: 2, estudiante: 0, menor: 0 };
+const totalEl = document.getElementById('total');
+
+function circuitoActual() { return document.querySelector('input[name="circuito"]:checked').value; }
+
+function calcular() {
+  const p = PRICES[circuitoActual()];
+  const total = p.adulto * counts.adulto + p.estudiante * counts.estudiante + p.menor * counts.menor;
+  totalEl.textContent = 'S/ ' + total.toLocaleString('es-PE');
+  totalEl.classList.remove('pop'); void totalEl.offsetWidth; totalEl.classList.add('pop');
+}
+
+document.querySelectorAll('[data-step]').forEach(btn => btn.addEventListener('click', () => {
+  const key = btn.dataset.target;
+  counts[key] = Math.max(key === 'adulto' ? 0 : 0, counts[key] + parseInt(btn.dataset.step));
+  document.getElementById('cnt-' + key).textContent = counts[key];
+  calcular();
+}));
+document.querySelectorAll('input[name="circuito"]').forEach(r => r.addEventListener('change', calcular));
+
+const fecha = document.getElementById('fecha');
+fecha.min = new Date().toISOString().split('T')[0];
+
+document.getElementById('reservarBtn').addEventListener('click', () => {
+  const personas = counts.adulto + counts.estudiante + counts.menor;
+  if (personas === 0) { document.getElementById('totalBox').classList.add('shake'); setTimeout(() => document.getElementById('totalBox').classList.remove('shake'), 700); return; }
+  if (!fecha.value) { fecha.classList.add('shake','border-terra'); setTimeout(() => fecha.classList.remove('shake'), 700); fecha.focus(); return; }
+  fecha.classList.remove('border-terra');
+
+  const f = new Date(fecha.value + 'T00:00').toLocaleDateString('es-PE', { day: 'numeric', month: 'long', year: 'numeric' });
+  const turno = document.getElementById('turno').selectedOptions[0].text;
+  document.getElementById('resumen').textContent =
+    personas + (personas === 1 ? ' visitante' : ' visitantes') + ' · Circuito ' + NAMES[circuitoActual()] +
+    ' · ' + f + ', ' + turno.toLowerCase() + ' · Total ' + totalEl.textContent;
+  document.getElementById('formView').classList.add('hidden');
+  document.getElementById('okView').classList.remove('hidden');
+});
+
+document.getElementById('resetBtn').addEventListener('click', () => {
+  document.getElementById('okView').classList.add('hidden');
+  document.getElementById('formView').classList.remove('hidden');
+});
+
+calcular();
+</script>
 </body>
 </html>
