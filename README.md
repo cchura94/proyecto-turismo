@@ -1,3 +1,23 @@
 # Proyecto turistico
 
-- Lenin Martinez.
+<<<<<<< HEAD
+
+- # Lenin Martinez...
+  `	INTEGRANTES`
+- Moises Mojica
+- Jimmy Alvarez
+- Nilo Centellas
+- César Alca
+- Brian Santivañez
+- Ricardo Ventura
+- Josimar Velasquez Merida
+- Alvaro Cortez
+- Jerson Tasilla Culqui
+- Aldry Heredia Marquez
+- Bryan MG
+- Josias
+- Aramis Luciano
+- juan salvatierra
+- Joel Perez Damian
+- JORGE BENITEZ
+  > > > > > > > 7fed09aaddd9836b26fd71dcdf0fb99b558484f7
