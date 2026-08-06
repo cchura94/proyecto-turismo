@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Descubre Machu Picchu - La Maravilla del Mundo</title>
+    <!-- Tailwind CSS desde CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased">
+
+    <!-- Navbar -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-slate-900/80 backdrop-blur-md border-b border-white/10 text-white">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="#" class="text-2xl font-extrabold tracking-tight">PERÚ<span class="text-emerald-400">.</span></a>
+            <div class="hidden md:flex items-center gap-8 font-medium text-sm">
+                <a href="#experiencias" class="hover:text-emerald-400 transition-colors">Experiencias</a>
+                <a href="#detalles" class="hover:text-emerald-400 transition-colors">Información</a>
+                <a href="#reserva" class="bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold px-5 py-2.5 rounded-full transition-all duration-300 transform hover:scale-105">
+                    Reservar Viaje
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative h-screen flex items-center justify-center overflow-hidden">
+        <!-- Imagen de Fondo -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1526392060635-9d6019884377?q=80&w=2070&auto=format&fit=crop" 
+                 alt="Machu Picchu" 
+                 class="w-full h-full object-cover object-center scale-105 animate-pulse-subtle">
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-slate-950/20"></div>
+        </div>
+
+        <!-- Contenido Hero -->
+        <div class="relative z-10 max-w-4xl mx-auto text-center px-6 pt-20">
+            <span class="inline-block bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 font-semibold text-xs tracking-widest uppercase px-4 py-1.5 rounded-full mb-6 backdrop-blur-md">
+                Maravilla del Mundo Moderno
+            </span>
+            <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold text-white tracking-tight leading-tight mb-6">
+                Siente la magia ancestral de <span class="bg-gradient-to-r from-emerald-400 to-teal-200 bg-clip-text text-transparent">Machu Picchu</span>
+            </h1>
+            <p class="text-lg md:text-xl text-slate-300 font-normal max-w-2xl mx-auto mb-10 leading-relaxed">
+                Camina entre las nubes, explora la mística arquitectura inca y vive la aventura de tu vida en el corazón de los Andes peruanos.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <a href="#reserva" class="w-full sm:w-auto bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-base px-8 py-4 rounded-full shadow-lg shadow-emerald-500/25 transition-all duration-300 transform hover:-translate-y-0.5">
+                    Planificar mi Aventura
+                </a>
+                <a href="#experiencias" class="w-full sm:w-auto bg-white/10 hover:bg-white/20 text-white font-semibold text-base px-8 py-4 rounded-full backdrop-blur-md border border-white/20 transition-all duration-300">
+                    Ver Experiencias
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Métricas / Datos -->
+    <section class="bg-slate-900 text-white py-12 border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            <div>
+                <p class="text-3xl lg:text-4xl font-extrabold text-emerald-400">2,430m</p>
+                <p class="text-slate-400 text-sm mt-1">Altitud sobre el nivel del mar</p>
+            </div>
+            <div>
+                <p class="text-3xl lg:text-4xl font-extrabold text-emerald-400">Siglo XV</p>
+                <p class="text-slate-400 text-sm mt-1">Construcción inca</p>
+            </div>
+            <div>
+                <p class="text-3xl lg:text-4xl font-extrabold text-emerald-400">#1</p>
+                <p class="text-slate-400 text-sm mt-1">Destino en Sudamérica</p>
+            </div>
+            <div>
+                <p class="text-3xl lg:text-4xl font-extrabold text-emerald-400">UNESCO</p>
+                <p class="text-slate-400 text-sm mt-1">Patrimonio de la Humanidad</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experiencias / Qué ofrece -->
+    <section id="experiencias" class="py-24 max-w-7xl mx-auto px-6">
+        <div class="text-center max-w-2xl mx-auto mb-16">
+            <h2 class="text-emerald-600 font-bold text-sm tracking-wider uppercase mb-2">Una experiencia inolvidable</h2>
+            <p class="text-3xl md:text-4xl font-extrabold text-slate-900">Formas de explorar el santuario</p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+            <!-- Tarjeta 1 -->
+            <div class="bg-white rounded-2xl overflow-hidden border border-slate-200/80 shadow-sm hover:shadow-xl transition-all duration-300 group">
+                <div class="relative h-64 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1589802829985-817e51171b92?q=80&w=800&auto=format&fit=crop" 
+                         alt="Camino Inca" 
+                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                </div>
+                <div class="p-8">
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Trekking Camino Inca</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                        Recorre la ruta legendaria a través de la selva alta y montañas, llegando a la Puerta del Sol (Intipunku).
+                    </p>
+                    <span class="text-emerald-600 font-bold text-sm flex items-center gap-1 group-hover:gap-2 transition-all">
+                        Saber más &rarr;
+                    </span>
+                </div>
+            </div>
+
+            <!-- Tarjeta 2 -->
+            <div class="bg-white rounded-2xl overflow-hidden border border-slate-200/80 shadow-sm hover:shadow-xl transition-all duration-300 group">
+                <div class="relative h-64 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1509299349698-dd22323b5963?q=80&w=800&auto=format&fit=crop" 
+                         alt="Tren panorámico" 
+                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                </div>
+                <div class="p-8">
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Tren Panorámico Vistadome</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                        Viaja cómodamente contemplando los paisajes andinos a través de ventanas panorámicas en el techo.
+                    </p>
+                    <span class="text-emerald-600 font-bold text-sm flex items-center gap-1 group-hover:gap-2 transition-all">
+                        Saber más &rarr;
+                    </span>
+                </div>
+            </div>
+
+            <!-- Tarjeta 3 -->
+            <div class="bg-white rounded-2xl overflow-hidden border border-slate-200/80 shadow-sm hover:shadow-xl transition-all duration-300 group">
+                <div class="relative h-64 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1569383746724-6f1b882b8f46?q=80&w=800&auto=format&fit=crop" 
+                         alt="Huayna Picchu" 
+                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                </div>
+                <div class="p-8">
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Ascenso a Huayna Picchu</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                        Para los amantes del vértigo: escala la icónica montaña que domina la ciudadela para una vista panorámica única.
+                    </p>
+                    <span class="text-emerald-600 font-bold text-sm flex items-center gap-1 group-hover:gap-2 transition-all">
+                        Saber más &rarr;
+                    </span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action / Formulario -->
+    <section id="reserva" class="py-24 bg-slate-900 text-white relative overflow-hidden">
+        <div class="max-w-5xl mx-auto px-6 relative z-10">
+            <div class="bg-gradient-to-br from-slate-800 to-slate-900 border border-slate-700/60 rounded-3xl p-8 md:p-14 shadow-2xl grid lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <span class="text-emerald-400 font-bold text-sm tracking-wider uppercase">Reserva anticipada</span>
+                    <h2 class="text-3xl md:text-4xl font-extrabold mt-2 mb-4 leading-tight">¿Listo para vivir la historia?</h2>
+                    <p class="text-slate-300 text-sm leading-relaxed mb-6">
+                        Los cupos de ingreso a Machu Picchu son limitados por conservación. Asegura tus entradas y transporte con anticipación.
+                    </p>
+                    <ul class="space-y-3 text-sm text-slate-300">
+                        <li class="flex items-center gap-3">
+                            <span class="bg-emerald-500/20 text-emerald-400 p-1 rounded-full text-xs">✓</span> Guías locales certificados
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <span class="bg-emerald-500/20 text-emerald-400 p-1 rounded-full text-xs">✓</span> Traslados y boletos incluidos
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <span class="bg-emerald-500/20 text-emerald-400 p-1 rounded-full text-xs">✓</span> Cancelación flexible
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Formulario -->
+                <form class="space-y-4 bg-slate-950/60 p-6 rounded-2xl border border-slate-800 backdrop-blur-sm" onsubmit="event.preventDefault();">
+                    <div>
+                        <label class="block text-xs font-semibold uppercase text-slate-400 mb-1">Nombre completo</label>
+                        <input type="text" placeholder="Ej. Juan Pérez" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-emerald-500 transition-colors text-white placeholder-slate-500">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold uppercase text-slate-400 mb-1">Correo electrónico</label>
+                        <input type="email" placeholder="tu@email.com" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-emerald-500 transition-colors text-white placeholder-slate-500">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold uppercase text-slate-400 mb-1">Fecha estimada de viaje</label>
+                        <input type="date" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-emerald-500 transition-colors text-white">
+                    </div>
+                    <button type="submit" class="w-full bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold py-3.5 rounded-xl transition-all duration-300 shadow-lg shadow-emerald-500/20">
+                        Solicitar Cotización Gratuita
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-950 border-t border-slate-800 text-slate-500 py-8 text-center text-xs">
+        <p>© 2026 Promoción Turística Machu Picchu. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>
