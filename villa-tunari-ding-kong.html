@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ding Kong Park, Villa Tunari | Turismo Bolivia</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        jungle: {
+                            50: '#ecfdf3',
+                            100: '#d1fae0',
+                            500: '#22c55e',
+                            700: '#15803d',
+                            900: '#052e16'
+                        },
+                        river: '#0ea5a4'
+                    }
+                }
+            }
+        }
+    </script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-stone-50 text-slate-900 antialiased">
+    <header class="fixed inset-x-0 top-0 z-50 border-b border-white/15 bg-jungle-900/75 backdrop-blur-xl">
+        <nav class="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+            <a href="index.html" class="flex items-center gap-3 text-white">
+                <span class="grid h-10 w-10 place-items-center rounded-lg bg-white/10 text-emerald-200 ring-1 ring-white/15">
+                    <i data-lucide="trees" class="h-5 w-5"></i>
+                </span>
+                <span>
+                    <span class="block text-base font-bold leading-none">Villa Tunari</span>
+                    <span class="text-xs text-emerald-100/80">Ding Kong Park</span>
+                </span>
+            </a>
+            <div class="hidden items-center gap-6 text-sm font-medium text-emerald-50 md:flex">
+                <a href="#experiencia" class="hover:text-lime-200">Experiencia</a>
+                <a href="#plan" class="hover:text-lime-200">Plan</a>
+                <a href="#consejos" class="hover:text-lime-200">Consejos</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="relative min-h-[92vh] overflow-hidden text-white">
+            <img
+                src="https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=1800&q=80"
+                alt="Selva tropical cerca de Villa Tunari"
+                class="absolute inset-0 h-full w-full object-cover"
+            >
+            <div class="absolute inset-0 bg-gradient-to-r from-jungle-900 via-jungle-900/75 to-jungle-900/20"></div>
+            <div class="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-stone-50 to-transparent"></div>
+
+            <div class="relative mx-auto flex min-h-[92vh] max-w-7xl items-center px-4 pb-20 pt-28 sm:px-6 lg:px-8">
+                <div class="max-w-3xl">
+                    <span class="inline-flex items-center gap-2 rounded-full border border-lime-200/30 bg-lime-300/15 px-4 py-2 text-sm font-semibold text-lime-100 backdrop-blur">
+                        <i data-lucide="map-pin" class="h-4 w-4"></i>
+                        Chapare, Cochabamba, Bolivia
+                    </span>
+                    <h1 class="mt-6 text-5xl font-black leading-tight tracking-tight sm:text-6xl lg:text-7xl">
+                        Ding Kong Park en Villa Tunari
+                    </h1>
+                    <p class="mt-6 max-w-2xl text-lg leading-8 text-emerald-50 sm:text-xl">
+                        Un escape tropical para combinar juegos al aire libre, rios de agua fresca, caminatas cortas y la energia verde del tropico cochabambino.
+                    </p>
+                    <div class="mt-10 flex flex-col gap-3 sm:flex-row">
+                        <a href="#plan" class="inline-flex items-center justify-center gap-2 rounded-lg bg-lime-300 px-6 py-3 font-bold text-jungle-900 shadow-lg shadow-lime-950/20 transition hover:bg-lime-200">
+                            Ver itinerario
+                            <i data-lucide="arrow-down" class="h-4 w-4"></i>
+                        </a>
+                        <a href="#consejos" class="inline-flex items-center justify-center gap-2 rounded-lg border border-white/25 bg-white/10 px-6 py-3 font-semibold text-white backdrop-blur transition hover:bg-white/20">
+                            Preparar visita
+                            <i data-lucide="backpack" class="h-4 w-4"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="experiencia" class="relative -mt-10 px-4 sm:px-6 lg:px-8">
+            <div class="mx-auto grid max-w-7xl gap-4 md:grid-cols-4">
+                <article class="rounded-lg bg-white p-5 shadow-xl shadow-emerald-950/10 ring-1 ring-slate-200">
+                    <i data-lucide="waves" class="h-7 w-7 text-river"></i>
+                    <h2 class="mt-4 text-lg font-bold">Ambiente tropical</h2>
+                    <p class="mt-2 text-sm leading-6 text-slate-600">Calor, vegetacion densa y espacios para refrescarse cerca de los rios del Chapare.</p>
+                </article>
+                <article class="rounded-lg bg-white p-5 shadow-xl shadow-emerald-950/10 ring-1 ring-slate-200">
+                    <i data-lucide="route" class="h-7 w-7 text-river"></i>
+                    <h2 class="mt-4 text-lg font-bold">Aventura ligera</h2>
+                    <p class="mt-2 text-sm leading-6 text-slate-600">Ideal para una salida familiar con recorridos cortos, fotos y actividades recreativas.</p>
+                </article>
+                <article class="rounded-lg bg-white p-5 shadow-xl shadow-emerald-950/10 ring-1 ring-slate-200">
+                    <i data-lucide="camera" class="h-7 w-7 text-river"></i>
+                    <h2 class="mt-4 text-lg font-bold">Fotos selvaticas</h2>
+                    <p class="mt-2 text-sm leading-6 text-slate-600">La mezcla de follaje, senderos y agua crea escenarios vivos durante toda la visita.</p>
+                </article>
+                <article class="rounded-lg bg-white p-5 shadow-xl shadow-emerald-950/10 ring-1 ring-slate-200">
+                    <i data-lucide="sun" class="h-7 w-7 text-river"></i>
+                    <h2 class="mt-4 text-lg font-bold">Dia completo</h2>
+                    <p class="mt-2 text-sm leading-6 text-slate-600">Funciona muy bien como parada principal o como parte de un circuito por Villa Tunari.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="px-4 py-20 sm:px-6 lg:px-8">
+            <div class="mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-[1.05fr_.95fr]">
+                <div>
+                    <p class="text-sm font-bold uppercase tracking-[0.2em] text-jungle-700">Portal al tropico</p>
+                    <h2 class="mt-3 text-4xl font-black tracking-tight text-slate-950 sm:text-5xl">Una parada verde dentro de la ruta de Villa Tunari</h2>
+                    <p class="mt-6 text-lg leading-8 text-slate-700">
+                        Villa Tunari es reconocida como la capital turistica del tropico de Cochabamba. Desde este punto se conectan parques recreativos, senderos, rios y reservas naturales, por eso Ding Kong Park encaja como una visita para disfrutar el clima calido y la energia de la selva sin alejarse demasiado del circuito principal.
+                    </p>
+                    <div class="mt-8 grid gap-4 sm:grid-cols-3">
+                        <div class="rounded-lg border border-emerald-100 bg-emerald-50 p-4">
+                            <span class="text-3xl font-black text-jungle-700">160</span>
+                            <p class="mt-1 text-sm text-slate-600">km aprox. desde Cochabamba</p>
+                        </div>
+                        <div class="rounded-lg border border-emerald-100 bg-emerald-50 p-4">
+                            <span class="text-3xl font-black text-jungle-700">25C</span>
+                            <p class="mt-1 text-sm text-slate-600">temperatura media anual estimada</p>
+                        </div>
+                        <div class="rounded-lg border border-emerald-100 bg-emerald-50 p-4">
+                            <span class="text-3xl font-black text-jungle-700">1 dia</span>
+                            <p class="mt-1 text-sm text-slate-600">tiempo recomendado de visita</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid gap-4 sm:grid-cols-2">
+                    <img
+                        src="https://images.unsplash.com/photo-1511497584788-876760111969?auto=format&fit=crop&w=900&q=80"
+                        alt="Vegetacion tropical"
+                        class="h-72 w-full rounded-lg object-cover shadow-lg shadow-emerald-950/15 sm:mt-10"
+                    >
+                    <img
+                        src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=80"
+                        alt="Paisaje natural de montana y bosque"
+                        class="h-72 w-full rounded-lg object-cover shadow-lg shadow-emerald-950/15"
+                    >
+                </div>
+            </div>
+        </section>
+
+        <section id="plan" class="bg-jungle-900 px-4 py-20 text-white sm:px-6 lg:px-8">
+            <div class="mx-auto max-w-7xl">
+                <div class="max-w-2xl">
+                    <p class="text-sm font-bold uppercase tracking-[0.2em] text-lime-200">Itinerario sugerido</p>
+                    <h2 class="mt-3 text-4xl font-black tracking-tight sm:text-5xl">Como vivir Ding Kong Park en un dia</h2>
+                </div>
+
+                <div class="mt-12 grid gap-6 lg:grid-cols-3">
+                    <article class="rounded-lg border border-white/10 bg-white/10 p-6 backdrop-blur">
+                        <div class="flex h-12 w-12 items-center justify-center rounded-lg bg-lime-300 font-black text-jungle-900">1</div>
+                        <h3 class="mt-6 text-2xl font-bold">Llegada y recorrido</h3>
+                        <p class="mt-3 leading-7 text-emerald-50/85">Empieza temprano para evitar el sol fuerte. Recorre las areas verdes, ubica los accesos al agua y define donde descansar.</p>
+                    </article>
+                    <article class="rounded-lg border border-white/10 bg-white/10 p-6 backdrop-blur">
+                        <div class="flex h-12 w-12 items-center justify-center rounded-lg bg-lime-300 font-black text-jungle-900">2</div>
+                        <h3 class="mt-6 text-2xl font-bold">Juegos y fotos</h3>
+                        <p class="mt-3 leading-7 text-emerald-50/85">Dedica el centro del dia a las actividades recreativas. Lleva ropa comoda, sandalias firmes y una funda seca para el celular.</p>
+                    </article>
+                    <article class="rounded-lg border border-white/10 bg-white/10 p-6 backdrop-blur">
+                        <div class="flex h-12 w-12 items-center justify-center rounded-lg bg-lime-300 font-black text-jungle-900">3</div>
+                        <h3 class="mt-6 text-2xl font-bold">Tarde de rio</h3>
+                        <p class="mt-3 leading-7 text-emerald-50/85">Cierra con descanso junto al agua y una comida local. Si tienes tiempo, combina la visita con Parque Machia o Yuraventura.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="consejos" class="px-4 py-20 sm:px-6 lg:px-8">
+            <div class="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[.9fr_1.1fr]">
+                <div>
+                    <p class="text-sm font-bold uppercase tracking-[0.2em] text-jungle-700">Antes de ir</p>
+                    <h2 class="mt-3 text-4xl font-black tracking-tight text-slate-950">Consejos rapidos para una visita comoda</h2>
+                    <p class="mt-5 text-lg leading-8 text-slate-700">El clima puede cambiar rapido: el calor, la humedad y la lluvia son parte del encanto del Chapare.</p>
+                </div>
+
+                <div class="grid gap-4 sm:grid-cols-2">
+                    <div class="rounded-lg border border-slate-200 bg-white p-5 shadow-sm">
+                        <i data-lucide="shirt" class="h-6 w-6 text-jungle-700"></i>
+                        <h3 class="mt-4 font-bold">Ropa liviana</h3>
+                        <p class="mt-2 text-sm leading-6 text-slate-600">Usa prendas frescas, gorra y zapatillas con buen agarre para caminar con seguridad.</p>
+                    </div>
+                    <div class="rounded-lg border border-slate-200 bg-white p-5 shadow-sm">
+                        <i data-lucide="droplets" class="h-6 w-6 text-jungle-700"></i>
+                        <h3 class="mt-4 font-bold">Agua y repelente</h3>
+                        <p class="mt-2 text-sm leading-6 text-slate-600">Mantente hidratado y lleva repelente, especialmente si visitas en epoca humeda.</p>
+                    </div>
+                    <div class="rounded-lg border border-slate-200 bg-white p-5 shadow-sm">
+                        <i data-lucide="cloud-rain" class="h-6 w-6 text-jungle-700"></i>
+                        <h3 class="mt-4 font-bold">Plan flexible</h3>
+                        <p class="mt-2 text-sm leading-6 text-slate-600">Consulta el clima antes de salir y confirma horarios o precios con operadores locales.</p>
+                    </div>
+                    <div class="rounded-lg border border-slate-200 bg-white p-5 shadow-sm">
+                        <i data-lucide="leaf" class="h-6 w-6 text-jungle-700"></i>
+                        <h3 class="mt-4 font-bold">Cuidado del entorno</h3>
+                        <p class="mt-2 text-sm leading-6 text-slate-600">Guarda tus residuos, respeta senderos y evita alimentar animales de la zona.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="border-t border-slate-200 bg-white px-4 py-8 sm:px-6 lg:px-8">
+        <div class="mx-auto flex max-w-7xl flex-col gap-4 text-sm text-slate-500 sm:flex-row sm:items-center sm:justify-between">
+            <p>2026 Turismo LATAM. Guia de Villa Tunari, Bolivia.</p>
+            <a href="index.html" class="inline-flex items-center gap-2 font-semibold text-jungle-700 hover:text-jungle-900">
+                Volver al catalogo
+                <i data-lucide="arrow-right" class="h-4 w-4"></i>
+            </a>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
