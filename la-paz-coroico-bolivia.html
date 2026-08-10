@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Descubre Coroico</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        html{
+            scroll-behavior:smooth;
+        }
+
+        .hero{
+            background-image:linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),
+            url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee");
+            background-size:cover;
+            background-position:center;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100">
+
+<!-- NAVBAR -->
+<nav class="fixed w-full bg-white/90 backdrop-blur shadow-md z-50">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+
+        <h1 class="text-2xl font-bold text-green-700">
+            🌿 Coroico
+        </h1>
+
+        <div class="space-x-6 hidden md:flex">
+            <a href="#destino" class="hover:text-green-700">Destino</a>
+            <a href="#atractivos" class="hover:text-green-700">Atractivos</a>
+            <a href="#contacto" class="hover:text-green-700">Reservar</a>
+        </div>
+
+    </div>
+</nav>
+
+
+<!-- HERO -->
+<section class="hero h-screen flex items-center justify-center text-center text-white">
+
+    <div class="max-w-3xl px-6">
+
+        <h2 class="text-6xl font-extrabold mb-6">
+            Descubre Coroico
+        </h2>
+
+        <p class="text-xl mb-8">
+            Vive una experiencia inolvidable entre montañas, cascadas,
+            naturaleza exuberante y el cálido clima de los Yungas.
+        </p>
+
+        <a href="#destino"
+           class="bg-green-600 hover:bg-green-700 transition px-8 py-4 rounded-full text-lg font-semibold shadow-lg">
+            Explorar
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- DESTINO -->
+<section id="destino" class="py-20">
+
+    <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+
+        <img
+            src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee"
+            class="rounded-3xl shadow-xl"
+        >
+
+        <div>
+
+            <h2 class="text-4xl font-bold text-green-700 mb-6">
+                El paraíso de los Yungas
+            </h2>
+
+            <p class="text-gray-700 text-lg leading-8">
+                Coroico es uno de los destinos turísticos más visitados del
+                departamento de La Paz. Rodeado por exuberante vegetación,
+                montañas y un agradable clima subtropical, es ideal para
+                descansar, practicar deportes de aventura y disfrutar de la
+                gastronomía local. También es un excelente punto para conocer
+                cascadas, cafetales y comunidades afrobolivianas. :contentReference[oaicite:0]{index=0}
+
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ATRACTIVOS -->
+
+<section id="atractivos" class="bg-white py-20">
+
+    <div class="max-w-7xl mx-auto px-6">
+
+        <h2 class="text-4xl text-center font-bold mb-12">
+            Lugares Imperdibles
+        </h2>
+
+        <div class="grid md:grid-cols-3 gap-8">
+
+            <div class="bg-gray-50 rounded-2xl shadow-lg overflow-hidden hover:scale-105 transition">
+
+                <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee">
+
+                <div class="p-6">
+
+                    <h3 class="text-2xl font-bold text-green-700">
+                        🌄 Miradores
+                    </h3>
+
+                    <p class="mt-3 text-gray-600">
+                        Contempla paisajes increíbles desde los miradores naturales
+                        rodeados por la selva yungueña.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="bg-gray-50 rounded-2xl shadow-lg overflow-hidden hover:scale-105 transition">
+
+                <img src="https://images.unsplash.com/photo-1511497584788-876760111969">
+
+                <div class="p-6">
+
+                    <h3 class="text-2xl font-bold text-green-700">
+                        💦 Cascadas
+                    </h3>
+
+                    <p class="mt-3 text-gray-600">
+                        Disfruta de refrescantes cascadas y piscinas naturales
+                        rodeadas de vegetación tropical.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="bg-gray-50 rounded-2xl shadow-lg overflow-hidden hover:scale-105 transition">
+
+                <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb">
+
+                <div class="p-6">
+
+                    <h3 class="text-2xl font-bold text-green-700">
+                        🚵 Ruta de la Muerte
+                    </h3>
+
+                    <p class="mt-3 text-gray-600">
+                        Vive una de las experiencias más emocionantes del mundo
+                        practicando ciclismo de montaña.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CTA -->
+
+<section class="bg-green-700 text-white py-20">
+
+    <div class="max-w-5xl mx-auto text-center px-6">
+
+        <h2 class="text-5xl font-bold mb-6">
+            Tu próxima aventura comienza aquí
+        </h2>
+
+        <p class="text-xl mb-10">
+            Reserva hoy mismo y descubre uno de los lugares más hermosos de Bolivia.
+        </p>
+
+        <a href="#contacto"
+            class="bg-white text-green-700 font-bold px-8 py-4 rounded-full hover:bg-green-100 transition">
+            Reservar Ahora
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer id="contacto" class="bg-gray-900 text-gray-300 py-10">
+
+    <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between">
+
+        <div>
+
+            <h2 class="text-2xl font-bold text-white">
+                Coroico Turismo
+            </h2>
+
+            <p class="mt-3">
+                Naturaleza • Aventura • Cultura
+            </p>
+
+        </div>
+
+        <div class="mt-8 md:mt-0">
+
+            <h3 class="font-bold mb-3">
+                Contacto
+            </h3>
+
+            <p>📞 +591 70000000</p>
+            <p>✉ info@coroico.com</p>
+
+        </div>
+
+    </div>
+
+</footer>
+
+</body>
+</html>

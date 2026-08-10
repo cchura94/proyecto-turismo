@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Descubre Samaipata | Bolivia</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="font-sans antialiased text-gray-800 bg-stone-50">
+
+  <!-- Navegación -->
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-stone-900/80 backdrop-blur-md text-white border-b border-stone-800">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="#" class="text-2xl font-bold tracking-wider text-amber-500 uppercase">Samaipata</a>
+      <div class="hidden md:flex space-x-8 font-medium">
+        <a href="#atractivos" class="hover:text-amber-400 transition-colors">Atractivos</a>
+        <a href="#experiencias" class="hover:text-amber-400 transition-colors">Experiencias</a>
+        <a href="#clima" class="hover:text-amber-400 transition-colors">Clima</a>
+      </div>
+      <a href="#reservar" class="bg-amber-600 hover:bg-amber-500 text-stone-900 font-semibold px-5 py-2 rounded-full transition-all duration-300 transform hover:scale-105">
+        Planear Viaje
+      </a>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="relative min-h-screen flex items-center justify-center bg-cover bg-center pt-16" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1920&q=80');">
+    <div class="text-center text-white px-6 max-w-4xl mx-auto space-y-6">
+      <span class="inline-block bg-amber-500/20 text-amber-300 border border-amber-500/30 font-semibold text-sm px-4 py-1.5 rounded-full uppercase tracking-widest backdrop-blur-sm">
+        Valles Cruceños • Bolivia
+      </span>
+      <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight leading-tight">
+        Donde la Historia Descansa en las Alturas
+      </h1>
+      <p class="text-lg md:text-xl text-stone-200 max-w-2xl mx-auto leading-relaxed">
+        Descubre el encanto colonial, la imponente roca esculpida de El Fuerte y la naturaleza exuberante de Samaipata. Un refugio de paz en el corazón de Bolivia.
+      </p>
+      <div class="pt-4 flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="#atractivos" class="bg-amber-500 hover:bg-amber-400 text-stone-950 font-bold px-8 py-4 rounded-xl shadow-lg shadow-amber-500/20 transition-all transform hover:-translate-y-0.5">
+          Explorar Atractivos
+        </a>
+        <a href="#video" class="border border-white/40 hover:bg-white/10 text-white font-semibold px-8 py-4 rounded-xl backdrop-blur-sm transition-all">
+          Ver Galería
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tarjetas de Atractivos Principales -->
+  <section id="atractivos" class="py-24 max-w-7xl mx-auto px-6">
+    <div class="text-center max-w-2xl mx-auto mb-16 space-y-3">
+      <h2 class="text-4xl font-bold text-stone-900">Lugares Imperdibles</h2>
+      <p class="text-stone-600 text-lg">Conecta con la arqueología, la aventura y la cultura local.</p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-8">
+      <!-- Tarjeta 1 -->
+      <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow duration-300 border border-stone-100 flex flex-col">
+        <div class="h-56 bg-stone-300 relative">
+          <img src="https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=800&q=80" alt="El Fuerte de Samaipata" class="w-full h-full object-cover" />
+          <span class="absolute top-4 left-4 bg-stone-900/70 text-amber-400 text-xs font-bold px-3 py-1 rounded-full backdrop-blur-md">
+            Patrimonio UNESCO
+          </span>
+        </div>
+        <div class="p-6 flex-1 flex flex-col justify-between">
+          <div>
+            <h3 class="text-2xl font-bold text-stone-900 mb-2">El Fuerte</h3>
+            <p class="text-stone-600 text-sm leading-relaxed">
+              La roca tallada más grande del mundo. Un antiguo centro ceremonial de culturas precolombinas e incaicas con vista panorámica a las montañas.
+            </p>
+          </div>
+          <a href="#" class="mt-6 text-amber-600 font-semibold hover:text-amber-700 inline-flex items-center text-sm">
+            Leer más &rarr;
+          </a>
+        </div>
+      </div>
+
+      <!-- Tarjeta 2 -->
+      <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow duration-300 border border-stone-100 flex flex-col">
+        <div class="h-56 bg-stone-300 relative">
+          <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80" alt="Las Cuevas" class="w-full h-full object-cover" />
+          <span class="absolute top-4 left-4 bg-stone-900/70 text-amber-400 text-xs font-bold px-3 py-1 rounded-full backdrop-blur-md">
+            Naturaleza
+          </span>
+        </div>
+        <div class="p-6 flex-1 flex flex-col justify-between">
+          <div>
+            <h3 class="text-2xl font-bold text-stone-900 mb-2">Cascadas Las Cuevas</h3>
+            <p class="text-stone-600 text-sm leading-relaxed">
+              Disfruta de tres caídas de agua cristalina rodeadas de playas de arena blanca y vegetación frondosa ideal para el descanso.
+            </p>
+          </div>
+          <a href="#" class="mt-6 text-amber-600 font-semibold hover:text-amber-700 inline-flex items-center text-sm">
+            Leer más &rarr;
+          </a>
+        </div>
+      </div>
+
+      <!-- Tarjeta 3 -->
+      <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow duration-300 border border-stone-100 flex flex-col">
+        <div class="h-56 bg-stone-300 relative">
+          <img src="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=800&q=80" alt="Ruta del Vino" class="w-full h-full object-cover" />
+          <span class="absolute top-4 left-4 bg-stone-900/70 text-amber-400 text-xs font-bold px-3 py-1 rounded-full backdrop-blur-md">
+            Gastronomía
+          </span>
+        </div>
+        <div class="p-6 flex-1 flex flex-col justify-between">
+          <div>
+            <h3 class="text-2xl font-bold text-stone-900 mb-2">Vinedos de Altura</h3>
+            <p class="text-stone-600 text-sm leading-relaxed">
+              Degusta vinos artesanales producidos en los valles templados y acompaña la experiencia con la variada gastronomía local e internacional.
+            </p>
+          </div>
+          <a href="#" class="mt-6 text-amber-600 font-semibold hover:text-amber-700 inline-flex items-center text-sm">
+            Leer más &rarr;
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Banner de Llamado a la Acción -->
+  <section id="reservar" class="bg-stone-900 text-white py-20 px-6">
+    <div class="max-w-4xl mx-auto text-center space-y-6">
+      <h2 class="text-3xl md:text-5xl font-bold">¿Listo para vivir la experiencia?</h2>
+      <p class="text-stone-400 text-lg max-w-xl mx-auto">
+        Ubicado a solo 2.5 horas de Santa Cruz de la Sierra. Clima agradable durante todo el año.
+      </p>
+      <div class="pt-4">
+        <button class="bg-amber-500 hover:bg-amber-400 text-stone-950 font-bold px-8 py-4 rounded-xl shadow-lg transition-transform transform hover:scale-105">
+          Contactar Guía Turístico
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-stone-950 text-stone-500 py-8 px-6 border-t border-stone-800 text-center text-sm">
+    <p>&copy; 2026 Promoción Turística Samaipata. Todos los derechos reservados.</p>
+  </footer>
+
+</body>
+</html>

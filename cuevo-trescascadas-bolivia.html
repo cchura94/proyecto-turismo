@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="La Cueva de las Tres Cascadas, un destino turístico natural cerca de Samaipata, Santa Cruz, Bolivia.">
     <title>Las Tres Cascadas | Bolivia</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
     <style>
         *,
         *::before,
@@ -45,72 +49,6 @@
         .container {
             width: min(1100px, 90%);
             margin: 0 auto;
-        }
-
-        .header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            z-index: 100;
-            background: rgba(15, 36, 28, 0.85);
-            backdrop-filter: blur(8px);
-            transition: background var(--transition), box-shadow var(--transition);
-        }
-
-        .header.scrolled {
-            background: rgba(15, 36, 28, 0.97);
-            box-shadow: var(--shadow);
-        }
-
-        .nav {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 1rem 0;
-        }
-
-        .logo {
-            color: var(--color-white);
-            font-size: 1.35rem;
-            font-weight: 700;
-            text-decoration: none;
-            letter-spacing: 1px;
-        }
-
-        .nav-menu {
-            display: flex;
-            gap: 1.5rem;
-        }
-
-        .nav-menu a {
-            color: var(--color-white);
-            text-decoration: none;
-            font-size: 0.95rem;
-            transition: color var(--transition);
-        }
-
-        .nav-menu a:hover {
-            color: var(--color-accent);
-        }
-
-        .nav-toggle {
-            display: none;
-            flex-direction: column;
-            gap: 5px;
-            background: transparent;
-            border: none;
-            cursor: pointer;
-            padding: 6px;
-        }
-
-        .nav-toggle span {
-            display: block;
-            width: 26px;
-            height: 3px;
-            background: var(--color-white);
-            border-radius: 2px;
-            transition: transform var(--transition), opacity var(--transition);
         }
 
         .hero {
@@ -466,39 +404,6 @@
         }
 
         @media (max-width: 860px) {
-            .nav-toggle {
-                display: flex;
-            }
-
-            .nav-menu {
-                position: fixed;
-                top: 0;
-                right: -100%;
-                width: 260px;
-                height: 100vh;
-                flex-direction: column;
-                background: var(--color-dark);
-                padding: 5rem 2rem;
-                gap: 1.5rem;
-                transition: right var(--transition);
-            }
-
-            .nav-menu.open {
-                right: 0;
-            }
-
-            .nav-toggle.open span:nth-child(1) {
-                transform: translateY(8px) rotate(45deg);
-            }
-
-            .nav-toggle.open span:nth-child(2) {
-                opacity: 0;
-            }
-
-            .nav-toggle.open span:nth-child(3) {
-                transform: translateY(-8px) rotate(-45deg);
-            }
-
             .about-grid {
                 grid-template-columns: 1fr;
             }
@@ -515,21 +420,23 @@
 </head>
 <body>
 
-    <header class="header" id="header">
-        <div class="container nav">
-            <a href="#inicio" class="logo">Tres Cascadas</a>
-            <button class="nav-toggle" id="navToggle" aria-label="Abrir menú">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-            <nav class="nav-menu" id="navMenu">
-                <a href="#inicio">Inicio</a>
-                <a href="#sobre">Sobre el lugar</a>
-                <a href="#cascadas">Las cascadas</a>
-                <a href="#galeria">Galería</a>
-                <a href="#contacto">Contacto</a>
-            </nav>
+    <!-- Header / Navbar -->
+    <header class="sticky top-0 z-50 backdrop-blur-lg bg-slate-950/60 border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-3 group">
+                <div class="p-2.5 rounded-xl bg-teal-500/20 text-teal-400 border border-teal-500/30 group-hover:scale-105 transition-transform">
+                    <i data-lucide="compass" class="w-6 h-6"></i>
+                </div>
+                <div>
+                    <span class="text-xl font-bold bg-gradient-to-r from-white via-slate-200 to-teal-400 bg-clip-text text-transparent">Turismo LATAM</span>
+                    <span class="block text-xs text-slate-400">Portal Destinos Latinoamérica</span>
+                </div>
+            </a>
+
+            <div class="hidden md:flex items-center gap-6 text-sm font-medium text-slate-300">
+                <a href="index.html#destinos" class="hover:text-teal-400 transition-colors">Todos los Destinos</a>
+                <a href="index.html#paises" class="hover:text-teal-400 transition-colors">Países</a>
+            </div>
         </div>
     </header>
 
@@ -649,25 +556,7 @@
     </div>
 
     <script>
-        const navToggle = document.getElementById('navToggle');
-        const navMenu = document.getElementById('navMenu');
-        const header = document.getElementById('header');
-
-        navToggle.addEventListener('click', () => {
-            navToggle.classList.toggle('open');
-            navMenu.classList.toggle('open');
-        });
-
-        navMenu.querySelectorAll('a').forEach((link) => {
-            link.addEventListener('click', () => {
-                navToggle.classList.remove('open');
-                navMenu.classList.remove('open');
-            });
-        });
-
-        window.addEventListener('scroll', () => {
-            header.classList.toggle('scrolled', window.scrollY > 40);
-        });
+        lucide.createIcons();
 
         const galleryItems = document.querySelectorAll('.gallery-item');
         const lightbox = document.getElementById('lightbox');
