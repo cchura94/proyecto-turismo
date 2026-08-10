@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+  <title>Sorata · Jardín Escondido de Bolivia</title>
+  <!-- Tailwind via CDN + complemento de tipografía y colores naturales -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&family=Playfair+Display:ital,wght@0,500;0,700;1,500&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: #f9fafb;
+    }
+    .font-display {
+      font-family: 'Playfair Display', Georgia, serif;
+    }
+    /* degradado sutil para las tarjetas de aventura */
+    .card-gradient {
+      background: linear-gradient(145deg, #ffffff 0%, #f3f4f6 100%);
+    }
+    .shadow-soft {
+      box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.08), 0 6px 12px -6px rgba(0, 0, 0, 0.02);
+    }
+    .text-balance {
+      text-wrap: balance;
+    }
+  </style>
+</head>
+<body class="antialiased text-gray-800 bg-stone-50">
+
+  <!-- Navegación sutil -->
+  <nav class="sticky top-0 z-40 backdrop-blur-md bg-white/75 border-b border-emerald-100/60 shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
+      <div class="flex items-center gap-2">
+        <span class="text-2xl">⛰️</span>
+        <span class="font-display font-bold text-xl text-emerald-800 tracking-tight">Sorata</span>
+      </div>
+      <div class="hidden sm:flex gap-6 text-sm font-medium text-gray-600">
+        <a href="#descubre" class="hover:text-emerald-700 transition-colors">Descubre</a>
+        <a href="#aventura" class="hover:text-emerald-700 transition-colors">Aventura</a>
+        <a href="#esencia" class="hover:text-emerald-700 transition-colors">Esencia</a>
+        <a href="#visita" class="hover:text-emerald-700 transition-colors">Planifica</a>
+      </div>
+      <div class="sm:hidden">
+        <button class="text-emerald-800 p-2 focus:outline-none" aria-label="Menú">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero principal con imagen de montaña y degradado boliviano -->
+  <header class="relative w-full overflow-hidden bg-gradient-to-b from-emerald-900/90 via-emerald-800/70 to-stone-50 text-white">
+    <div class="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-30 mix-blend-overlay" style="background-image: url('https://images.pexels.com/photos/2815696/pexels-photo-2815696.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');"></div>
+    <div class="absolute inset-0 bg-gradient-to-t from-stone-50 via-transparent to-emerald-950/50"></div>
+    
+    <div class="relative max-w-7xl mx-auto px-6 pt-28 pb-32 sm:pt-40 sm:pb-44 lg:pt-48 lg:pb-52 text-center">
+      <span class="inline-block bg-white/20 backdrop-blur-sm text-emerald-100 text-xs sm:text-sm font-semibold tracking-widest uppercase px-4 py-1.5 rounded-full mb-6 border border-white/30">
+        La Paz · Bolivia
+      </span>
+      <h1 class="font-display text-5xl sm:text-7xl md:text-8xl font-bold tracking-tight text-white drop-shadow-[0_4px_12px_rgba(0,0,0,0.3)]">
+        Sorata
+      </h1>
+      <p class="mt-5 max-w-2xl mx-auto text-lg sm:text-xl md:text-2xl font-light text-white/90 leading-relaxed text-balance">
+        El refugio encantado entre los Andes. Cielo limpio, valles profundos y la cordillera que acaricia las nubes.
+      </p>
+      <div class="mt-10 flex flex-wrap justify-center gap-4">
+        <a href="#visita" class="bg-white text-emerald-900 font-semibold px-8 py-3.5 rounded-full shadow-xl hover:bg-emerald-50 transition-all transform hover:scale-105 text-sm sm:text-base">
+          Quiero explorar
+        </a>
+        <a href="#descubre" class="border-2 border-white/60 text-white font-medium px-8 py-3.5 rounded-full hover:bg-white/10 transition-all text-sm sm:text-base backdrop-blur-sm">
+          Conoce más
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Sección Descubre: clima y ubicación privilegiada -->
+  <section id="descubre" class="max-w-7xl mx-auto px-5 sm:px-8 py-20 lg:py-28">
+    <div class="grid lg:grid-cols-2 gap-12 items-center">
+      <div class="order-2 lg:order-1">
+        <span class="text-emerald-700 font-semibold tracking-wide text-sm uppercase">Bienvenido al paraíso andino</span>
+        <h2 class="font-display text-4xl sm:text-5xl font-bold text-gray-800 mt-3 leading-tight">
+          Donde el verde toca el cielo
+        </h2>
+        <p class="mt-5 text-gray-600 text-lg leading-relaxed">
+          Sorata se esconde en un valle fértil a los pies del majestuoso Illampu. Su clima primaveral, rodeado de montañas nevadas y ríos cristalinos, convierte cada día en una postal viva. A solo 3 horas de La Paz, es el escape perfecto para senderistas, soñadores y buscadores de paz.
+        </p>
+        <div class="mt-7 grid grid-cols-2 gap-4">
+          <div class="bg-white/80 backdrop-blur-sm p-4 rounded-2xl shadow-soft border border-emerald-50">
+            <p class="text-2xl font-bold text-emerald-700">20°C</p>
+            <p class="text-sm text-gray-500">Temperatura media</p>
+          </div>
+          <div class="bg-white/80 backdrop-blur-sm p-4 rounded-2xl shadow-soft border border-emerald-50">
+            <p class="text-2xl font-bold text-emerald-700">2.700 m</p>
+            <p class="text-sm text-gray-500">Altitud acogedora</p>
+          </div>
+        </div>
+      </div>
+      <div class="order-1 lg:order-2 relative">
+        <div class="aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl bg-emerald-200/30">
+          <img src="https://images.pexels.com/photos/3214936/pexels-photo-3214936.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Valle de Sorata con montañas" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700">
+        </div>
+        <div class="absolute -bottom-6 -left-6 bg-white rounded-2xl shadow-xl p-4 flex items-center gap-3 backdrop-blur-sm">
+          <span class="text-3xl">🏔️</span>
+          <div>
+            <p class="font-bold text-gray-800">Illampu</p>
+            <p class="text-xs text-gray-500">6.368 m · Guardián de Sorata</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Aventura y naturaleza (cards) -->
+  <section id="aventura" class="bg-gradient-to-b from-white to-emerald-50/40 py-20 lg:py-28">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8">
+      <div class="text-center mb-14">
+        <span class="text-emerald-600 font-semibold tracking-widest text-sm uppercase">Experiencias inolvidables</span>
+        <h2 class="font-display text-4xl sm:text-5xl font-bold text-gray-800 mt-2">Aventura en cada sendero</h2>
+      </div>
+      
+      <div class="grid md:grid-cols-3 gap-7">
+        <!-- Carta 1: Gruta de San Pedro -->
+        <div class="card-gradient rounded-3xl p-6 shadow-soft hover:shadow-xl transition-all duration-300 border border-white/60 group">
+          <div class="text-4xl mb-4">🛶</div>
+          <h3 class="font-display text-2xl font-semibold text-gray-800">Gruta de San Pedro</h3>
+          <p class="text-gray-600 mt-2 text-sm leading-relaxed">
+            Navega en bote dentro de una cueva de aguas turquesas. Estalactitas y un silencio místico a solo 30 min del pueblo.
+          </p>
+          <div class="mt-4 flex items-center text-emerald-700 font-medium text-sm group-hover:underline cursor-pointer">
+            Explorar cueva <span class="ml-2">→</span>
+          </div>
+        </div>
+        <!-- Carta 2: Trekking Laguna Glaciar -->
+        <div class="card-gradient rounded-3xl p-6 shadow-soft hover:shadow-xl transition-all duration-300 border border-white/60 group">
+          <div class="text-4xl mb-4">🥾</div>
+          <h3 class="font-display text-2xl font-semibold text-gray-800">Laguna Glaciar</h3>
+          <p class="text-gray-600 mt-2 text-sm leading-relaxed">
+            Camina entre gigantes andinos hasta la Laguna Chillata. Un espejo de agua color esmeralda frente al Illampu.
+          </p>
+          <div class="mt-4 flex items-center text-emerald-700 font-medium text-sm group-hover:underline cursor-pointer">
+            Ver ruta <span class="ml-2">→</span>
+          </div>
+        </div>
+        <!-- Carta 3: Mirador del Cóndor -->
+        <div class="card-gradient rounded-3xl p-6 shadow-soft hover:shadow-xl transition-all duration-300 border border-white/60 group">
+          <div class="text-4xl mb-4">🦅</div>
+          <h3 class="font-display text-2xl font-semibold text-gray-800">Mirador del Cóndor</h3>
+          <p class="text-gray-600 mt-2 text-sm leading-relaxed">
+            Contempla el vuelo de cóndores sobre el valle. Amaneceres que pintan de dorado las cumbres nevadas.
+          </p>
+          <div class="mt-4 flex items-center text-emerald-700 font-medium text-sm group-hover:underline cursor-pointer">
+            Amanecer mágico <span class="ml-2">→</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Esencia cultural y naturaleza (dos columnas con imagen) -->
+  <section id="esencia" class="max-w-7xl mx-auto px-5 sm:px-8 py-20 lg:py-28">
+    <div class="flex flex-col lg:flex-row-reverse gap-12 items-center">
+      <div class="lg:w-1/2">
+        <span class="text-emerald-700 font-semibold tracking-wide text-sm uppercase">Alma viva</span>
+        <h2 class="font-display text-4xl sm:text-5xl font-bold text-gray-800 mt-3 leading-tight">
+          Tradición, tejidos y sabores
+        </h2>
+        <p class="text-gray-600 text-lg mt-5 leading-relaxed">
+          Sorata no es solo paisaje; sus comunidades aymaras mantienen vivas técnicas textiles ancestrales. En el mercado dominical encuentras frutas frescas, api caliente y la calidez de su gente. Degusta el café de altura cultivado en sus laderas.
+        </p>
+        <ul class="mt-6 space-y-3 text-gray-700">
+          <li class="flex items-center gap-3"><span class="text-emerald-600 text-xl">✓</span> Feria artesanal los domingos</li>
+          <li class="flex items-center gap-3"><span class="text-emerald-600 text-xl">✓</span> Gastronomía local: trucha, chairo y humintas</li>
+          <li class="flex items-center gap-3"><span class="text-emerald-600 text-xl">✓</span> Hospedajes ecológicos y familiares</li>
+        </ul>
+      </div>
+      <div class="lg:w-1/2 grid grid-cols-2 gap-4">
+        <img src="https://images.pexels.com/photos/1479641/pexels-photo-1479641.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Mercado andino textil" class="rounded-3xl h-60 w-full object-cover shadow-lg hover:scale-105 transition-transform duration-500">
+        <img src="https://images.pexels.com/photos/3609862/pexels-photo-3609862.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Café y montañas" class="rounded-3xl h-60 w-full object-cover mt-8 shadow-lg hover:scale-105 transition-transform duration-500">
+      </div>
+    </div>
+  </section>
+
+  <!-- Cita inspiradora / testimonio -->
+  <div class="bg-emerald-800/90 text-white py-16 my-10 relative overflow-hidden">
+    <div class="absolute inset-0 bg-[url('https://images.pexels.com/photos/2909077/pexels-photo-2909077.jpeg?auto=compress&cs=tinysrgb&w=1200')] bg-cover bg-center opacity-20 mix-blend-overlay"></div>
+    <div class="relative max-w-3xl mx-auto text-center px-6">
+      <svg class="w-10 h-10 mx-auto text-emerald-300 mb-4 opacity-80" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" /></svg>
+      <p class="font-display text-2xl sm:text-3xl italic font-light text-balance">“Sorata es el suspiro verde de Bolivia. Aquí la tierra habla y el cielo escucha.”</p>
+      <p class="mt-4 text-emerald-200 text-sm">— Viajero entre montañas</p>
+    </div>
+  </div>
+
+  <!-- Planifica tu visita (call to action) -->
+  <section id="visita" class="max-w-7xl mx-auto px-5 sm:px-8 py-16 lg:py-24">
+    <div class="bg-white rounded-[2.5rem] shadow-soft border border-emerald-100 p-8 sm:p-12 lg:p-14 grid lg:grid-cols-2 gap-8 items-center">
+      <div>
+        <h2 class="font-display text-4xl sm:text-5xl font-bold text-gray-800">Tu viaje a Sorata empieza aquí</h2>
+        <p class="text-gray-600 mt-4 text-lg">
+          Desde La Paz, toma la carretera hacia los Yungas y desvía al paraíso. Te recomendamos mínimo 2 días para enamorarte. Encuentra hospedaje con vista al Illampu y despierta con el canto de las aves.
+        </p>
+        <div class="mt-7 flex flex-wrap gap-4">
+          <a href="#" class="bg-emerald-700 text-white font-semibold px-7 py-3.5 rounded-full shadow-lg hover:bg-emerald-800 transition-all inline-flex items-center gap-2">
+            📍 Cómo llegar
+          </a>
+          <a href="#" class="border-2 border-emerald-200 text-emerald-800 font-semibold px-7 py-3.5 rounded-full hover:bg-emerald-50 transition-all inline-flex items-center gap-2">
+            🏡 Alojamientos
+          </a>
+        </div>
+      </div>
+      <div class="bg-emerald-50/70 rounded-3xl p-6 sm:p-8">
+        <h3 class="font-display text-2xl font-semibold text-gray-800 mb-4">Clima hoy en Sorata</h3>
+        <div class="flex items-center gap-4">
+          <span class="text-6xl">⛅</span>
+          <div>
+            <p class="text-3xl font-bold text-gray-700">19°C</p>
+            <p class="text-emerald-700 text-sm">Parcialmente nublado · ideal para caminar</p>
+          </div>
+        </div>
+        <div class="mt-5 border-t border-emerald-200 pt-4 text-sm text-gray-500 space-y-1">
+          <p>🌄 Amanecer: 06:45 · 🌇 Atardecer: 18:30</p>
+          <p>💧 Humedad: 58% · Viento suave del noreste</p>
+        </div>
+        <p class="mt-5 text-xs text-gray-400">*Datos referenciales, Sorata siempre sorprende.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-stone-900 text-stone-300 py-12 mt-10">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
+      <div class="flex items-center gap-2 text-white">
+        <span class="text-2xl">⛰️</span>
+        <span class="font-display font-bold text-xl">Sorata · Bolivia</span>
+      </div>
+      <div class="flex gap-6 text-sm">
+        <a href="#" class="hover:text-emerald-400 transition-colors">Sobre Sorata</a>
+        <a href="#" class="hover:text-emerald-400 transition-colors">Turismo responsable</a>
+        <a href="#" class="hover:text-emerald-400 transition-colors">Contacto</a>
+      </div>
+      <p class="text-xs text-stone-500">© 2025 Descubre Sorata · Jardín escondido de La Paz</p>
+    </div>
+  </footer>
+
+</body>
+</html>
