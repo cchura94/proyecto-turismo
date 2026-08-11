@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Playa del Carmen · El Caribe mexicano</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;1,9..144,500&family=Work+Sans:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          turquesa:   { DEFAULT: '#0E8C8C', claro: '#5FD9CE' },
+          coral:      '#FF6B4A',
+          arena:      '#F5E7C6',
+          profundo:   '#073B4C',
+          espuma:     '#FFFDF7',
+        },
+        fontFamily: {
+          display: ['Fraunces', 'serif'],
+          body: ['"Work Sans"', 'sans-serif'],
+          mono: ['"Space Mono"', 'monospace'],
+        },
+      },
+    },
+  }
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Work Sans', sans-serif; background: #FFFDF7; }
+  .font-display { font-family: 'Fraunces', serif; }
+  .font-mono { font-family: 'Space Mono', monospace; }
+
+  .ola-wrap { position: relative; overflow: hidden; height: 90px; }
+  .ola-wrap svg { position: absolute; top: 0; left: 0; width: 200%; height: 100%; }
+  .ola-anim { animation: deriva 22s linear infinite; }
+  @keyframes deriva { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  .barco { animation: navega 22s linear infinite; }
+  @keyframes navega { from { transform: translateX(-10%); } to { transform: translateX(110%); } }
+  @media (prefers-reduced-motion: reduce) {
+    .ola-anim, .barco { animation: none !important; }
+  }
+
+  .ticket-dash {
+    background-image: repeating-linear-gradient(to right, #073B4C 0, #073B4C 10px, transparent 10px, transparent 18px);
+    height: 2px;
+  }
+
+  .foto { position: relative; overflow: hidden; }
+  .foto img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.6s ease; }
+  .foto:hover img { transform: scale(1.05); }
+</style>
+</head>
+<body class="text-profundo">
+
+<!-- NAV -->
+<header class="absolute top-0 left-0 right-0 z-20 flex items-center justify-between px-6 md:px-12 py-6 text-espuma">
+  <span class="font-display text-xl tracking-wide">Playa del Carmen</span>
+  <nav class="hidden md:flex gap-8 font-mono text-xs uppercase tracking-widest">
+    <a href="#descubre" class="hover:text-coral transition-colors">Descubre</a>
+    <a href="#destinos" class="hover:text-coral transition-colors">Destinos</a>
+    <a href="#actividades" class="hover:text-coral transition-colors">Actividades</a>
+    <a href="#reserva" class="hover:text-coral transition-colors">Reserva</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="relative min-h-screen flex items-center overflow-hidden">
+  <div class="absolute inset-0">
+    <img src="https://images.unsplash.com/photo-1601902036628-1fb0919e49ea?w=2000&auto=format&fit=crop&q=80" alt="Vista aérea de la playa en Playa del Carmen" class="w-full h-full object-cover">
+    <div class="absolute inset-0 bg-gradient-to-b from-[#073B4C]/80 via-[#0E8C8C]/50 to-[#0B2E3D]/70"></div>
+  </div>
+
+  <div class="relative z-10 max-w-5xl mx-auto px-6 md:px-12 pt-24 text-espuma">
+    <p class="font-mono text-xs md:text-sm uppercase tracking-[0.3em] text-arena mb-6">20°37&#39;58"N · Riviera Maya, México</p>
+    <h1 class="font-display font-medium text-6xl md:text-8xl leading-[0.95]">
+      Playa del<br><span class="italic">Carmen</span>
+    </h1>
+    <p class="mt-8 max-w-lg font-body text-lg md:text-xl text-espuma/90">
+      Donde la selva se detiene justo a tiempo para dejarte ver el mar. Arena blanca, agua turquesa y una Quinta Avenida que no duerme.
+    </p>
+    <div class="mt-10 flex flex-wrap gap-4">
+      <a href="#reserva" class="bg-coral hover:bg-coral/90 text-espuma font-body font-semibold px-7 py-4 rounded-full transition-colors">
+        Planea tu viaje
+      </a>
+      <a href="#destinos" class="border border-espuma/50 hover:border-espuma text-espuma font-body px-7 py-4 rounded-full transition-colors">
+        Ver destinos cercanos
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- OLA -->
+<div class="ola-wrap bg-turquesa-claro">
+  <svg class="ola-anim" viewBox="0 0 2880 90" preserveAspectRatio="none">
+    <path fill="#FFFDF7" d="M0,40 C 240,90 480,0 720,40 C 960,80 1200,0 1440,40 C 1680,80 1920,0 2160,40 C 2400,80 2640,0 2880,40 L2880,90 L0,90 Z"></path>
+  </svg>
+</div>
+
+<!-- INTRO / BOARDING PASS -->
+<section id="descubre" class="bg-espuma px-6 md:px-12 py-20">
+  <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-14 items-center">
+    <div>
+      <p class="font-mono text-xs uppercase tracking-[0.3em] text-coral mb-4">La Quinta y el mar</p>
+      <h2 class="font-display text-4xl md:text-5xl leading-tight mb-6">
+        Un pueblo costero que se volvió puerta al Caribe
+      </h2>
+      <p class="text-profundo/80 leading-relaxed mb-4">
+        Playa del Carmen creció alrededor de un muelle de pescadores y hoy es el corazón de la Riviera Maya: cenotes a minutos de distancia, arrecifes para bucear y una avenida peatonal —la Quinta— llena de terrazas, mezcal y música hasta tarde.
+      </p>
+      <p class="text-profundo/80 leading-relaxed">
+        Todo está cerca: el ferry a Cozumel sale cada hora desde el muelle central, y la selva de Tulum y las ruinas de Cobá quedan a menos de una hora en carretera.
+      </p>
+    </div>
+
+    <div class="bg-profundo text-espuma rounded-2xl p-8 shadow-xl">
+      <div class="flex justify-between items-start mb-6">
+        <div>
+          <p class="font-mono text-[10px] uppercase tracking-widest text-arena/70">Pase de abordar</p>
+          <p class="font-display text-2xl">CUN → PDC</p>
+        </div>
+        <p class="font-mono text-xs text-espuma/70">CARIBE MX</p>
+      </div>
+      <div class="ticket-dash mb-6"></div>
+      <div class="grid grid-cols-2 gap-y-5 font-mono text-sm">
+        <div><p class="text-arena/60 text-[10px] uppercase">Clima</p><p>28°C todo el año</p></div>
+        <div><p class="text-arena/60 text-[10px] uppercase">Idioma</p><p>Español · English</p></div>
+        <div><p class="text-arena/60 text-[10px] uppercase">Ferry a Cozumel</p><p>cada 60 min</p></div>
+        <div><p class="text-arena/60 text-[10px] uppercase">Mejor época</p><p>Nov – Abr</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OLA -->
+<div class="ola-wrap bg-espuma">
+  <svg class="ola-anim" viewBox="0 0 2880 90" preserveAspectRatio="none">
+    <path fill="#F5E7C6" d="M0,50 C 240,10 480,90 720,50 C 960,10 1200,90 1440,50 C 1680,10 1920,90 2160,50 C 2400,10 2640,90 2880,50 L2880,90 L0,90 Z"></path>
+  </svg>
+</div>
+
+<!-- POR QUÉ VENIR -->
+<section class="bg-arena px-6 md:px-12 py-20">
+  <div class="max-w-6xl mx-auto">
+    <h2 class="font-display text-4xl md:text-5xl mb-12 max-w-xl">Cuatro razones para quedarte más de un fin de semana</h2>
+    <div class="grid md:grid-cols-2 gap-6">
+      <div class="bg-espuma rounded-2xl p-8 hover:-translate-y-1 transition-transform">
+        <p class="font-mono text-xs text-coral mb-2">01 · CENOTES</p>
+        <h3 class="font-display text-2xl mb-3">Nadar en agua de otro mundo</h3>
+        <p class="text-profundo/75">Piscinas naturales de agua dulce escondidas en la selva, a 20–40 minutos de la ciudad. Cenote Azul y Kantun-Chi son los favoritos para empezar.</p>
+      </div>
+      <div class="bg-espuma rounded-2xl p-8 hover:-translate-y-1 transition-transform">
+        <p class="font-mono text-xs text-coral mb-2">02 · QUINTA AVENIDA</p>
+        <h3 class="font-display text-2xl mb-3">Una avenida sin autos, 24/7</h3>
+        <p class="text-profundo/75">Cinco kilómetros de galerías, restaurantes de mariscos, bares de mezcal y música en vivo, a una calle de la playa.</p>
+      </div>
+      <div class="bg-espuma rounded-2xl p-8 hover:-translate-y-1 transition-transform">
+        <p class="font-mono text-xs text-coral mb-2">03 · ARRECIFE</p>
+        <h3 class="font-display text-2xl mb-3">El segundo arrecife más grande del mundo</h3>
+        <p class="text-profundo/75">El Sistema Arrecifal Mesoamericano corre frente a la costa: snorkel y buceo con visibilidad de hasta 30 metros.</p>
+      </div>
+      <div class="bg-espuma rounded-2xl p-8 hover:-translate-y-1 transition-transform">
+        <p class="font-mono text-xs text-coral mb-2">04 · COZUMEL</p>
+        <h3 class="font-display text-2xl mb-3">Una isla a 45 minutos en ferry</h3>
+        <p class="text-profundo/75">Salidas cada hora desde el muelle central: ideal para un día de buceo y volver a dormir en la Riviera.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OLA -->
+<div class="ola-wrap bg-arena">
+  <svg class="ola-anim" viewBox="0 0 2880 90" preserveAspectRatio="none">
+    <path fill="#FFFDF7" d="M0,40 C 240,90 480,0 720,40 C 960,80 1200,0 1440,40 C 1680,80 1920,0 2160,40 C 2400,80 2640,0 2880,40 L2880,90 L0,90 Z"></path>
+  </svg>
+</div>
+
+<!-- DESTINOS -->
+<section id="destinos" class="bg-espuma px-6 md:px-12 py-20">
+  <div class="max-w-6xl mx-auto">
+    <p class="font-mono text-xs uppercase tracking-[0.3em] text-coral mb-4">A un viaje corto de distancia</p>
+    <h2 class="font-display text-4xl md:text-5xl mb-12 max-w-xl">Destinos para hacer base en Playa y salir de excursión</h2>
+
+    <div class="grid md:grid-cols-2 gap-8">
+
+      <div class="rounded-2xl overflow-hidden bg-arena shadow-sm hover:shadow-lg transition-shadow">
+        <div class="foto h-52">
+          <img src="https://images.unsplash.com/photo-1509233725247-49e657c54213?w=900&auto=format&fit=crop&q=75" alt="Costa caribeña con palmeras, similar a Cozumel">
+        </div>
+        <div class="p-6">
+          <p class="font-mono text-[10px] uppercase tracking-widest text-turquesa mb-1">45 min en ferry</p>
+          <h3 class="font-display text-2xl mb-2">Cozumel</h3>
+          <p class="text-profundo/75 text-sm">Isla frente a la costa, famosa por sus arrecifes de buceo casi transparentes y sus playas de arena fina en el lado oeste.</p>
+        </div>
+      </div>
+
+      <div class="rounded-2xl overflow-hidden bg-arena shadow-sm hover:shadow-lg transition-shadow">
+        <div class="foto h-52">
+          <img src="https://images.unsplash.com/photo-1709069819541-1524f7bcb7be?w=900&auto=format&fit=crop&q=75" alt="Ruinas mayas de Tulum sobre el acantilado">
+        </div>
+        <div class="p-6">
+          <p class="font-mono text-[10px] uppercase tracking-widest text-turquesa mb-1">50 min en auto</p>
+          <h3 class="font-display text-2xl mb-2">Tulum</h3>
+          <p class="text-profundo/75 text-sm">Ruinas mayas sobre un acantilado que mira directo al Caribe, y playas rodeadas de palmeras al pie de las rocas.</p>
+        </div>
+      </div>
+
+      <div class="rounded-2xl overflow-hidden bg-arena shadow-sm hover:shadow-lg transition-shadow">
+        <div class="foto h-52">
+          <img src="https://images.unsplash.com/photo-1723167131720-161f9bcdff97?w=900&auto=format&fit=crop&q=75" alt="Cenote de agua turquesa en una cueva">
+        </div>
+        <div class="p-6">
+          <p class="font-mono text-[10px] uppercase tracking-widest text-turquesa mb-1">20–40 min en auto</p>
+          <h3 class="font-display text-2xl mb-2">Ruta de cenotes</h3>
+          <p class="text-profundo/75 text-sm">Cuevas y pozas de agua dulce color turquesa, algunas al aire libre y otras bajo techos de roca cubiertos de raíces.</p>
+        </div>
+      </div>
+
+      <div class="rounded-2xl overflow-hidden bg-arena shadow-sm hover:shadow-lg transition-shadow">
+        <div class="foto h-52">
+          <img src="https://images.unsplash.com/photo-1726147417354-cf82fb0548af?w=900&auto=format&fit=crop&q=75" alt="Playa con muchas palmeras cerca de un parque eco-arqueológico">
+        </div>
+        <div class="p-6">
+          <p class="font-mono text-[10px] uppercase tracking-widest text-turquesa mb-1">15 min al sur</p>
+          <h3 class="font-display text-2xl mb-2">Xcaret &amp; Xel-Há</h3>
+          <p class="text-profundo/75 text-sm">Parques eco-arqueológicos con ríos subterráneos, caletas para nadar entre manglares y espectáculos culturales por la noche.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ACTIVIDADES -->
+<section id="actividades" class="bg-profundo text-espuma px-6 md:px-12 py-20">
+  <div class="max-w-6xl mx-auto">
+    <p class="font-mono text-xs uppercase tracking-[0.3em] text-arena mb-4">Cosas que hacer</p>
+    <h2 class="font-display text-4xl md:text-5xl mb-12 max-w-xl">Actividades para cada tipo de día</h2>
+
+    <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
+      <div class="bg-espuma/5 border border-espuma/10 rounded-2xl p-6 hover:bg-espuma/10 transition-colors">
+        <svg class="w-9 h-9 mb-4" viewBox="0 0 24 24" fill="none" stroke="#5FD9CE" stroke-width="1.6"><path d="M2 15c2-4 6-6 10-6s8 2 10 6"/><circle cx="8" cy="12" r="1.4" fill="#5FD9CE" stroke="none"/><circle cx="16" cy="12" r="1.4" fill="#5FD9CE" stroke="none"/><path d="M6 15v3M18 15v3"/></svg>
+        <h3 class="font-display text-xl mb-2">Buceo y snorkel</h3>
+        <p class="text-espuma/70 text-sm">Arrecifes a 10 minutos en lancha desde la costa, aptos para principiantes y certificados.</p>
+      </div>
+      <div class="bg-espuma/5 border border-espuma/10 rounded-2xl p-6 hover:bg-espuma/10 transition-colors">
+        <svg class="w-9 h-9 mb-4" viewBox="0 0 24 24" fill="none" stroke="#5FD9CE" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 3v18M3 12h18"/></svg>
+        <h3 class="font-display text-xl mb-2">Nado en cenotes</h3>
+        <p class="text-espuma/70 text-sm">Aguas dulces y cristalinas a temperatura constante, ideales para escapar del calor de mediodía.</p>
+      </div>
+      <div class="bg-espuma/5 border border-espuma/10 rounded-2xl p-6 hover:bg-espuma/10 transition-colors">
+        <svg class="w-9 h-9 mb-4" viewBox="0 0 24 24" fill="none" stroke="#5FD9CE" stroke-width="1.6"><path d="M4 20 L14 4 L20 20 Z"/><path d="M9 12h6"/></svg>
+        <h3 class="font-display text-xl mb-2">Kitesurf y vela</h3>
+        <p class="text-espuma/70 text-sm">Vientos constantes de diciembre a abril frente a las playas al norte del centro.</p>
+      </div>
+      <div class="bg-espuma/5 border border-espuma/10 rounded-2xl p-6 hover:bg-espuma/10 transition-colors">
+        <svg class="w-9 h-9 mb-4" viewBox="0 0 24 24" fill="none" stroke="#5FD9CE" stroke-width="1.6"><path d="M6 3v18M6 3c3 0 3 3 0 3M14 3v18M18 3v6a4 4 0 0 1-4 4"/></svg>
+        <h3 class="font-display text-xl mb-2">Gastronomía yucateca</h3>
+        <p class="text-espuma/70 text-sm">Cochinita pibil, pescado tikin xic y mariscos frescos en cocinas familiares fuera de la Quinta.</p>
+      </div>
+      <div class="bg-espuma/5 border border-espuma/10 rounded-2xl p-6 hover:bg-espuma/10 transition-colors">
+        <svg class="w-9 h-9 mb-4" viewBox="0 0 24 24" fill="none" stroke="#5FD9CE" stroke-width="1.6"><path d="M9 18V5l11-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="17" cy="16" r="3"/></svg>
+        <h3 class="font-display text-xl mb-2">Vida nocturna</h3>
+        <p class="text-espuma/70 text-sm">Bares de mezcal, terrazas con música en vivo y clubes que abren hasta el amanecer.</p>
+      </div>
+      <div class="bg-espuma/5 border border-espuma/10 rounded-2xl p-6 hover:bg-espuma/10 transition-colors">
+        <svg class="w-9 h-9 mb-4" viewBox="0 0 24 24" fill="none" stroke="#5FD9CE" stroke-width="1.6"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></svg>
+        <h3 class="font-display text-xl mb-2">Yoga al amanecer</h3>
+        <p class="text-espuma/70 text-sm">Clases en la playa antes de que abra el comercio, con el mar todavía en calma.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALERÍA -->
+<section class="bg-espuma px-6 md:px-12 py-20">
+  <div class="max-w-6xl mx-auto">
+    <p class="font-mono text-xs uppercase tracking-[0.3em] text-coral mb-4">Postales</p>
+    <h2 class="font-display text-4xl md:text-5xl mb-12 max-w-xl">Escenas de Playa, en fotos</h2>
+
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+
+      <div class="foto rounded-xl h-48 md:h-[26rem] md:row-span-2">
+        <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&auto=format&fit=crop&q=75" alt="Amanecer dorado en la costa del Caribe">
+        <div class="absolute inset-0 bg-gradient-to-t from-profundo/70 via-transparent to-transparent"></div>
+        <p class="absolute bottom-3 left-3 text-espuma font-mono text-xs">Amanecer en la costa</p>
+      </div>
+
+      <div class="foto rounded-xl h-48">
+        <img src="https://images.unsplash.com/photo-1620095198790-2f663d67677d?w=800&auto=format&fit=crop&q=75" alt="Gente caminando por una calle peatonal de día">
+        <div class="absolute inset-0 bg-gradient-to-t from-profundo/70 via-transparent to-transparent"></div>
+        <p class="absolute bottom-3 left-3 text-espuma font-mono text-xs">La Quinta Avenida</p>
+      </div>
+
+      <div class="foto rounded-xl h-48">
+        <img src="https://images.unsplash.com/photo-1640617547871-15e4fb41d0c5?w=800&auto=format&fit=crop&q=75" alt="Playa de arena con palmeras y camastros">
+        <div class="absolute inset-0 bg-gradient-to-t from-profundo/50 via-transparent to-transparent"></div>
+        <p class="absolute bottom-3 left-3 text-espuma font-mono text-xs">Arena a mediodía</p>
+      </div>
+
+      <div class="foto rounded-xl h-48">
+        <img src="https://images.unsplash.com/photo-1503756234508-e32369269deb?w=800&auto=format&fit=crop&q=75" alt="Costa vacía con aguas turquesas">
+        <div class="absolute inset-0 bg-gradient-to-t from-profundo/60 via-transparent to-transparent"></div>
+        <p class="absolute bottom-3 left-3 text-espuma font-mono text-xs">Aguas turquesa</p>
+      </div>
+
+      <div class="foto rounded-xl h-48">
+        <img src="https://images.unsplash.com/photo-1607646868325-e459b2570fad?w=800&auto=format&fit=crop&q=75" alt="Personas disfrutando la playa de día">
+        <div class="absolute inset-0 bg-gradient-to-t from-profundo/60 via-transparent to-transparent"></div>
+        <p class="absolute bottom-3 left-3 text-espuma font-mono text-xs">Un día de playa</p>
+      </div>
+
+      <div class="foto rounded-xl h-48">
+        <img src="https://images.unsplash.com/photo-1640617547924-a7effcfec775?w=800&auto=format&fit=crop&q=75" alt="Playa de noche con luces entre las palmeras">
+        <div class="absolute inset-0 bg-gradient-to-t from-profundo/70 via-transparent to-transparent"></div>
+        <p class="absolute bottom-3 left-3 text-espuma font-mono text-xs">Noche en la costa</p>
+      </div>
+
+    </div>
+    <p class="text-profundo/40 text-xs font-mono mt-4">Fotos: Unsplash — Sean Oulashin, Braden Collum, Rajiv Perera, Kees Streefkerk, Jorge Fernández Salas, Alfonso Betancourt, Sylvia Kania, Matthew Brodeur, Raul Varela.</p>
+  </div>
+</section>
+
+<!-- ITINERARIO -->
+<section id="itinerario" class="bg-profundo text-espuma px-6 md:px-12 py-24 relative overflow-hidden">
+  <div class="ola-wrap absolute bottom-0 left-0 w-full opacity-20">
+    <svg class="barco" viewBox="0 0 100 20" style="position:absolute; width:60px; top:10px;">
+      <path fill="#FFFDF7" d="M10,15 L90,15 L80,20 L20,20 Z"></path>
+      <rect x="45" y="5" width="4" height="10" fill="#FFFDF7"></rect>
+    </svg>
+  </div>
+  <div class="max-w-4xl mx-auto relative z-10">
+    <p class="font-mono text-xs uppercase tracking-[0.3em] text-arena mb-4">Bitácora de un día</p>
+    <h2 class="font-display text-4xl md:text-5xl mb-14">Así se vive Playa del Carmen</h2>
+
+    <div class="space-y-10">
+      <div class="grid md:grid-cols-[100px_1fr] gap-4 border-b border-espuma/15 pb-8">
+        <p class="font-mono text-sm text-turquesa-claro">06:45</p>
+        <div><h3 class="font-display text-2xl mb-2">Amanecer frente al mar</h3><p class="text-espuma/75">Café en una terraza sobre Calle 38, mientras el sol sale directo del Caribe.</p></div>
+      </div>
+      <div class="grid md:grid-cols-[100px_1fr] gap-4 border-b border-espuma/15 pb-8">
+        <p class="font-mono text-sm text-turquesa-claro">11:00</p>
+        <div><h3 class="font-display text-2xl mb-2">Ferry a Cozumel</h3><p class="text-espuma/75">45 minutos de travesía para bucear entre coral y peces loro en Palancar.</p></div>
+      </div>
+      <div class="grid md:grid-cols-[100px_1fr] gap-4 border-b border-espuma/15 pb-8">
+        <p class="font-mono text-sm text-turquesa-claro">18:30</p>
+        <div><h3 class="font-display text-2xl mb-2">Ceviche y mezcal en la Quinta</h3><p class="text-espuma/75">La avenida se llena de luz y música justo cuando cae el sol.</p></div>
+      </div>
+      <div class="grid md:grid-cols-[100px_1fr] gap-4">
+        <p class="font-mono text-sm text-turquesa-claro">23:00</p>
+        <div><h3 class="font-display text-2xl mb-2">Arena tibia, marea baja</h3><p class="text-espuma/75">Una caminata descalzo por la orilla antes de dormir, con la selva sonando detrás.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA / RESERVA -->
+<section id="reserva" class="bg-gradient-to-br from-turquesa to-turquesa-claro px-6 md:px-12 py-20 text-espuma">
+  <div class="max-w-3xl mx-auto text-center">
+    <h2 class="font-display text-4xl md:text-5xl mb-5">El Caribe mexicano te está esperando</h2>
+    <p class="text-espuma/90 mb-10 max-w-xl mx-auto">Deja tu correo y te enviamos una guía corta con playas, cenotes y restaurantes que valen la escala.</p>
+    <form class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto" onsubmit="event.preventDefault(); this.querySelector('button').textContent='Guía enviada ✓';">
+      <input type="email" required placeholder="tu@correo.com"
+        class="flex-1 rounded-full px-6 py-4 text-profundo placeholder-profundo/40 focus:outline-none focus:ring-2 focus:ring-coral">
+      <button type="submit" class="bg-coral hover:bg-coral/90 font-semibold px-7 py-4 rounded-full transition-colors">
+        Enviar guía
+      </button>
+    </form>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-profundo text-espuma/60 px-6 md:px-12 py-10">
+  <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4 font-mono text-xs">
+    <span>Playa del Carmen · Quintana Roo · México</span>
+    <span>20.6296° N, 87.0739° W</span>
+  </div>
+</footer>
+
+</body>
+</html>
