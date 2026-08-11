@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Entrada del Carnaval de Oruro | Bolivia</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Encabezado / Navegación -->
+  <header class="header">
+    <div class="logo">Carnaval de Oruro</div>
+    <nav class="nav">
+      <a href="#inicio">Inicio</a>
+      <a href="#historia">La Entrada</a>
+      <a href="#danzas">Danzas</a>
+      <a href="#contacto">Información</a>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="inicio" class="hero">
+    <div class="hero-content">
+      <h1>Magia y Fe en la Entrada del Carnaval de Oruro</h1>
+      <p>Obra Maestra del Patrimonio Oral e Intangible de la Humanidad</p>
+      <a href="#contacto" class="btn">Vive la Experiencia</a>
+    </div>
+  </section>
+
+  <!-- Información de la Entrada -->
+  <section id="historia" class="section">
+    <h2>La Grandeza de la Entrada de Oruro</h2>
+    <p>
+      La Entrada del Carnaval de Oruro es la máxima expresión folklórica y devocional de Bolivia. 
+      Miles de bailarines y músicos recorren las calles orureñas en peregrinación hacia el Santuario 
+      de la Virgen del Socavón, desplegando fe, color y tradición en un espectáculo único a nivel mundial.
+    </p>
+  </section>
+
+  <!-- Danzas Tradicionales de Oruro -->
+  <section id="danzas" class="section bg-light">
+    <h2>Danzas Emblemáticas</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>La Diablada</h3>
+        <p>Símbolo máximo del Carnaval de Oruro, representando la lucha entre el bien y el mal con imponentes caretas y vestimentas.</p>
+      </div>
+      <div class="card">
+        <h3>Morenada</h3>
+        <p>Una de las danzas con mayor fuerza, elegancia y tradición en el recorrido folklórico orureño.</p>
+      </div>
+      <div class="card">
+        <h3>Caporales y Tobas</h3>
+        <p>Derroche de agilidad, juventud y energía que hacen vibrar el trayecto hacia el Socavón.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Información / Contacto -->
+  <section id="contacto" class="section">
+    <h2>Planifica tu Visita a Oruro</h2>
+    <p>Asegura tu lugar en las graderías y vive de cerca la mayor fiesta folklórica de Bolivia.</p>
+    <form class="form">
+      <input type="text" placeholder="Tu Nombre" required>
+      <input type="email" placeholder="Tu Correo Electrónico" required>
+      <button type="submit" class="btn">Solicitar Información de Entradas</button>
+    </form>
+  </section>
+
+  <!-- Pie de Página -->
+  <footer class="footer">
+    <p>&copy; Carnaval de Oruro, Bolivia. Todos los derechos reservados.</p>
+  </footer>
+
+</body>
+</html>
