@@ -1,7 +1,7 @@
 # Proyecto turistico
-``
-	INTEGRANTES
-``
+
+`	INTEGRANTES`
+
 - Moises Mojica
 - Jimmy Alvarez
 - Nilo Centellas
@@ -17,7 +17,5 @@
 - Aramis Luciano
 - juan salvatierra
 - Joel Perez Damian
-- Choque Huayta Carla Shecid
 - JORGE BENITEZ
-- María Isabel Conde Altamirano
-- Mario Darlin Escobar Parada
+- Lenin Martinez
