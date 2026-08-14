@@ -1,9 +1,7 @@
 # Proyecto turistico
 
-<<<<<<< HEAD
+`	INTEGRANTES`
 
-- # Lenin Martinez...
-  `	INTEGRANTES`
 - Moises Mojica
 - Jimmy Alvarez
 - Nilo Centellas
@@ -20,4 +18,4 @@
 - juan salvatierra
 - Joel Perez Damian
 - JORGE BENITEZ
-  > > > > > > > 7fed09aaddd9836b26fd71dcdf0fb99b558484f7
+- Lenin Martinez
